@@ -727,14 +727,14 @@ Fimalgoritmo`,
 // Descrição   : Apresenta a tabuada de multiplicar, de 1 a 10,
 //               de um número qualquer.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    numero, contadora, resultado: inteiro
 
 Inicio
    // Seção de Comandos, procedimento, funções, operadores, etc...
-   Escreval("-- Tabuado do 1 ao 10 --")
+   Escreval("-- Tabuada do 1 ao 10 --")
    Escreval("")
 
    Escreva("Digite um número: ")
@@ -761,7 +761,7 @@ Fimalgoritmo`,
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Apresenta o total da soma dos cem primeiros números inteiros.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    soma, contadora: inteiro
@@ -792,7 +792,7 @@ Fimalgoritmo`,
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Apresenta o somatório dos valores pares de 1 até 500.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    soma, contadora: inteiro
@@ -829,7 +829,7 @@ Fimalgoritmo`,
 //               de 0 a 20, verificando dentro da repetição se cada número é
 //               ímpar.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    contadora: inteiro
@@ -865,7 +865,7 @@ Fimalgoritmo`,
 // Descrição   : Apresenta as potências de 3 para expoentes de 0 a 15
 //               sem usar o operador ^.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    resultado, contadora: inteiro
@@ -897,7 +897,7 @@ Fimalgoritmo`,
 //               expoente informados pelo usuário, sem utilizar o operador
 //               de exponenciação (^)
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    base, expoente, contadora, resultado: inteiro
@@ -936,7 +936,7 @@ Fimalgoritmo`,
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Apresenta a série de Fibonacci até o décimo quinto termo.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    numeroA, numeroB, contadora, resultado: inteiro
@@ -975,7 +975,7 @@ Fimalgoritmo`,
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Apresenta a conversão de 10°C a 100°C, de 10 em 10 graus.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    celsius: inteiro
@@ -1007,7 +1007,7 @@ Fimalgoritmo`,
 // Descrição   : Lê 10 valores numéricos e apresenta ao final o somatório
 //               e a média aritmética dos valores informados.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    valor, soma, media: real
@@ -1047,7 +1047,7 @@ Fimalgoritmo`,
 // Descrição   : Apresenta o resultado da soma e da média aritmética dos
 //               valores pares situados na faixa numérica de 50 a 70.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    contadora, soma, quantidade: inteiro
@@ -1090,7 +1090,7 @@ Fimalgoritmo`,
 //               largura e o comprimento de cada cômodo e acumulando as
 //               áreas até o usuário informar que não deseja continuar.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    nomeComodo: caractere
@@ -1144,7 +1144,7 @@ Fimalgoritmo`,
 //               valor negativo e, ao final, apresenta o maior e o menor
 //               valor informado.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    numero, maior, menor: inteiro
@@ -1189,7 +1189,7 @@ Fimalgoritmo`,
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Apresenta os quadrados dos números inteiros de 15 até 200.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    numero, quadrado: real
@@ -1220,7 +1220,7 @@ Fimalgoritmo`,
 // Descrição   : Apresenta o somatório dos valores pares existentes na
 //               faixa de 1 até 500.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    contadora, soma: inteiro
@@ -1256,7 +1256,7 @@ Fimalgoritmo`,
 //               divisíveis por 4, verificando essa condição dentro da
 //               repetição.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    contadora: inteiro
@@ -1289,7 +1289,7 @@ Fimalgoritmo`,
 //               xadrez, começando com 1 grão e dobrando a quantidade a
 //               cada quadro até o 64º quadro.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    quadro: inteiro
@@ -1325,7 +1325,7 @@ Fimalgoritmo`,
 // Descrição   : Lê 15 valores inteiros e apresenta ao final o somatório
 //               dos fatoriais de cada valor informado.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    contadora, valor, multiplicador, fatorial: inteiro
@@ -1373,7 +1373,7 @@ Fimalgoritmo`,
 //               de valores lidos. O processo termina quando for informado
 //               um valor negativo.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    numero, soma, media: real
@@ -1416,7 +1416,7 @@ Fimalgoritmo`,
 // Descrição   : Apresenta o fatorial dos valores ímpares situados na
 //               faixa numérica de 1 a 10.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    contadora, multiplicador, fatorial: inteiro
@@ -1457,7 +1457,7 @@ Fimalgoritmo`,
 //               largura e o comprimento de cada cômodo e acumulando as
 //               áreas até o usuário informar que não deseja continuar.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    nomeComodo: caractere
@@ -1510,7 +1510,7 @@ Fimalgoritmo`,
 //               valor negativo e, ao final, apresenta o maior e o menor
 //               valor informado.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    numero, maior, menor: inteiro
@@ -1561,7 +1561,7 @@ Fimalgoritmo`,
 //               utilizando uma estrutura de repetição, sem utilizar o
 //               operador DIV.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 25/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    dividendo, divisor, resto, resultado: inteiro
@@ -2053,7 +2053,7 @@ Fimalgoritmo`,
 //               percentual que cada um representa em relação ao total
 //               de eleitores.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    totalEleitores, votosBrancos, votosNulos, votosValidos: inteiro
@@ -2100,7 +2100,7 @@ Fimalgoritmo`,
 // Descrição   : Lê o salário mensal atual de um funcionário e o percentual
 //               de reajuste. Calcula e escreve o valor do novo salário.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    salarioAtual, percentualReajuste, aumento, novoSalario: real
@@ -2138,7 +2138,7 @@ Fimalgoritmo`,
 //               impostos (45%), aplicados ao custo de fábrica. Lê o custo
 //               de fábrica, calcula e escreve o custo final ao consumidor.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    custoFabrica, percentualDistribuidor, percentualImpostos, custoFinal: real
@@ -2173,7 +2173,7 @@ Fimalgoritmo`,
 //               total das vendas, o salário fixo e a comissão por carro.
 //               Calcula e escreve o salário final do vendedor.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 23/09/2026
 Var
    // Seção de Declarações das variáveis
    numeroCarrosVendidos: inteiro
@@ -2218,7 +2218,7 @@ Fimalgoritmo`,
 // Descrição   : Lê uma temperatura em graus Fahrenheit, calcula e escreve
 //               o valor correspondente em graus Celsius.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    fahrenheit, celsius: real
@@ -2249,7 +2249,7 @@ Fimalgoritmo`,
 //               ponderada, considerando pesos 2, 3 e 5 para as
 //               respectivas notas.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    nota1, nota2, nota3, mediaFinal: real
@@ -2288,7 +2288,7 @@ Fimalgoritmo`,
 //               valor lido for maior que 10, caso contrário escreve
 //               'NÃO É MAIOR QUE 10!'.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    numero: real
@@ -2320,7 +2320,7 @@ Fimalgoritmo`,
 // Descrição   : Lê um valor e escreve se é positivo ou negativo
 //               (considera o valor zero como positivo).
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    numero: real
@@ -2354,7 +2354,7 @@ Fimalgoritmo`,
 //               Lê o número de maçãs compradas, calcula e escreve o
 //               custo total da compra.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    quantidade: inteiro
@@ -2391,7 +2391,7 @@ Fimalgoritmo`,
 //               se o aluno foi ou não aprovado (nota >= 6 é aprovado).
 //               Escreve também a média calculada.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    nota1, nota2, media: real
@@ -2432,7 +2432,7 @@ Fimalgoritmo`,
 //               Escreve uma mensagem que diga se ela poderá ou não votar
 //               este ano (não considera o mês em que a pessoa nasceu).
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    anoAtual, anoNascimento, idade: inteiro
@@ -2474,7 +2474,7 @@ Fimalgoritmo`,
 // Descrição   : Lê dois valores (considera que não serão lidos valores
 //               iguais) e escreve o maior deles.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    a, b: real
@@ -2510,7 +2510,7 @@ Fimalgoritmo`,
 // Descrição   : Lê dois valores (considera que não serão lidos valores
 //               iguais) e escreve-os em ordem crescente.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    a, b: real
@@ -2549,7 +2549,7 @@ Fimalgoritmo`,
 //               horas e que o jogo pode iniciar em um dia e terminar no
 //               dia seguinte.
 // Autor(a)    : Gilvam J. T. de Oliveira
-// Data atual  : 26/09/2026
+// Data atual  : 24/09/2026
 Var
    // Seção de Declarações das variáveis
    horaInicio, horaFim, duracao: inteiro
@@ -2581,97 +2581,787 @@ Fimalgoritmo`,
 "faccat-6–8-22": {
   title: "Hora extra",
   prompt: "Ler o número de horas trabalhadas em um mês e o salário por hora. Calcular o salário total, acrescentando hora extra para as horas que ultrapassarem 40 horas semanais, considerando um mês com 4 semanas exatas e adicional de 50%.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex22"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : A jornada de trabalho semanal é de 40 horas (mês com 4
+//               semanas exatas = 160 horas). Lê o número de horas
+//               trabalhadas no mês e o salário por hora, e escreve o
+//               salário total, acrescido de 50% para as horas extras.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   horasTrabalhadas: inteiro
+   salarioHora, salarioTotal, horasExtras: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Hora Extra --")
+   Escreval("")
+
+   Escreva("Digite o número de horas trabalhadas no mês: ")
+   Leia(horasTrabalhadas)
+   Escreval("")
+
+   Escreva("Digite o salário por hora: R$ ")
+   Leia(salarioHora)
+   Escreval("")
+
+   se (horasTrabalhadas > 160) entao
+      horasExtras <- horasTrabalhadas - 160
+      salarioTotal <- (160 * salarioHora) + (horasExtras * salarioHora * 1.5)
+   senao
+      salarioTotal <- horasTrabalhadas * salarioHora
+   fimse
+
+   Escreval("O salário total do funcionário é: R$", salarioTotal:6:2)
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-23": {
   title: "Erros no algoritmo",
   prompt: "Identificar os erros existentes em um algoritmo que recebe nome, altura e sexo de uma pessoa e calcula seu peso ideal. Para homens, utilizar (72,7 × altura) - 58; para mulheres, utilizar (62,1 × altura) - 44,7.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex23"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Identificação e correção dos erros do algoritmo original
+//               (peso ideal), que recebia nome, altura e sexo (M ou F)
+//               de uma pessoa e calculava o peso ideal.
+// - para sexo masculino: peso ideal = (72.7 * altura) - 58
+// - para sexo feminino: peso ideal = (62.1 * altura) - 44.7
+//inicio
+//   ler nome
+//   ler sexo
+//   se sexo = M então
+//      peso_ideal <- (72.7 * altura) - 58
+//   senão
+//      peso_ideal <- (62.1 * altura) – 44.7
+//      fim_se
+//      escrever peso_ideal
+//fim
+//
+// ERROS ENCONTRADOS no algoritmo original:
+//  1) Não existia a Seção "Var" com a declaração das variáveis
+//     (nome, sexo, altura, peso_ideal).
+//  2) A variável "altura" nunca era lida (faltava o comando Leia(altura)).
+//  3) A comparação "se sexo = M" está incorreta, pois M deveria estar
+//     entre aspas simples (sexo = 'M'), já que sexo é do tipo caractere.
+//  4) O algoritmo não seguia a sintaxe do VisuAlg (Algoritmo/Fimalgoritmo,
+//     Escreva/Escreval e Leia com parênteses).
+//
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   nome: caractere
+   sexo: caractere
+   altura, peso_ideal: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Peso Ideal --")
+   Escreval("")
+
+   Escreva("Digite o nome: ")
+   Leia(nome)
+   Escreval("")
+
+   Escreva("Digite o sexo (M/F): ")
+   Leia(sexo)
+   Escreval("")
+
+   Escreva("Digite a altura (Ex: 1.70): ")
+   Leia(altura)
+   Escreval("")
+
+   se (sexo = "M") ou (sexo = "m") entao
+      peso_ideal <- (72.7 * altura) - 58
+   senao
+      peso_ideal <- (62.1 * altura) - 44.7
+   fimse
+
+   Escreval("O peso ideal de ", nome, " é: ", peso_ideal:4:2)
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-24": {
   title: "Comissão do vendedor",
   prompt: "Ler o salário fixo e o valor das vendas efetuadas por um vendedor. Calcular o salário total considerando comissão de 3% sobre as vendas até R$ 1.500,00 e 5% sobre o valor que ultrapassar R$ 1.500,00.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex24"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê o salário fixo e o valor das vendas efetuadas por um
+//               vendedor. Ele recebe 3% de comissão sobre o total das
+//               vendas até R$ 1.500,00, mais 5% sobre o que ultrapassar
+//               este valor. Calcula e escreve o salário total.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   salarioFixo, valorVendas, comissao, salarioTotal: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Comissão do Vendedor --")
+   Escreval("")
+
+   Escreva("Digite o salário fixo do(a) vendedor(a): R$ ")
+   Leia(salarioFixo)
+   Escreval("")
+
+   Escreva("Digite o valor das vendas do(a) vendedor(a): R$ ")
+   Leia(valorVendas)
+   Escreval("")
+
+   se (valorVendas <= 1500) entao
+      comissao <- valorVendas * 3 / 100
+   senao
+      comissao <- (1500 * 3 / 100) + ((valorVendas - 1500) * 5 / 100)
+   fimse
+
+   salarioTotal <- salarioFixo + comissao
+
+   Escreval("O salário total do vendedor é: R$", salarioTotal:6:2)
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-25": {
   title: "Saldo bancário",
   prompt: "Ler o número da conta, saldo, débito e crédito de um cliente. Calcular o saldo atual usando saldo - débito + crédito e informar se o saldo é positivo ou negativo.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex25"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê o número da conta, saldo, débito e crédito de um
+//               cliente. Calcula e escreve o saldo atual (saldo - débito
+//               + crédito) e informa se o saldo é positivo ou negativo.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   numeroConta: inteiro
+   saldo, debito, credito, saldoAtual: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Saldo Bancário --")
+   Escreval("")
+
+   Escreva("Digite o número da conta: ")
+   Leia(numeroConta)
+   Escreval("")
+
+   Escreva("Digite o saldo: R$ ")
+   Leia(saldo)
+   Escreval("")
+
+   Escreva("Digite o débito: R$ ")
+   Leia(debito)
+   Escreval("")
+
+   Escreva("Digite o crédito: R$ ")
+   Leia(credito)
+   Escreval("")
+
+   saldoAtual <- saldo - debito + credito
+
+   se (saldoAtual >= 0) entao
+      Escreval("Saldo Positivo")
+   senao
+      Escreval("Saldo Negativo")
+   fimse
+
+   Escreval("O saldo atual é: R$", saldoAtual:6:2)
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-26": {
   title: "Controle de estoque",
   prompt: "Ler a quantidade atual, máxima e mínima em estoque de um produto. Calcular a quantidade média entre a máxima e a mínima e informar se deve efetuar compra ou não.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex26"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê a quantidade atual, máxima e mínima em estoque de um
+//               produto. Calcula a quantidade média ((máxima+mínima)/2) e
+//               informa se deve ou não efetuar compra.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   quantidadeAtual, quantidadeMaxima: inteiro
+   quantidadeMinima, quantidadeMedia: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Controle de Estoque --")
+   Escreval("")
+
+   Escreva("Digite a quantidade atual em estoque: ")
+   Leia(quantidadeAtual)
+   Escreval("")
+
+   Escreva("Digite a quantidade máxima em estoque: ")
+   Leia(quantidadeMaxima)
+   Escreval("")
+
+   Escreva("Digite a quantidade mínima em estoque: ")
+   Leia(quantidadeMinima)
+   Escreval("")
+
+   quantidadeMedia <- (quantidadeMaxima + quantidadeMinima) / 2
+
+   se (quantidadeAtual >= quantidadeMinima) entao
+      Escreval("Não efetuar compra!")
+   senao
+      Escreval("Efetuar compra!")
+   fimse
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-27": {
   title: "Positivo, negativo ou zero",
   prompt: "Ler um valor e escrever se ele é positivo, negativo ou zero.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex27"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê um valor e escreve se ele é positivo, negativo ou zero.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   numero: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Positivo, Negativo ou Zero --")
+   Escreval("")
+
+   Escreva("Digite um número: ")
+   Leia(numero)
+   Escreval("")
+
+   se (numero > 0) entao
+      Escreval("Positivo")
+   senao
+      se (numero < 0) entao
+         Escreval("Negativo")
+      senao
+         Escreval("Zero")
+      fimse
+   fimse
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-28": {
   title: "Maior de três valores",
   prompt: "Ler três valores diferentes e escrever o maior deles.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex28"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê três valores diferentes e escreve o maior deles.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   a, b, c: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Maior de Três Valores --")
+   Escreval("")
+
+   Escreva("Digite o valor de A: ")
+   Leia(a)
+   Escreval("")
+
+   Escreva("Digite o valor de B: ")
+   Leia(b)
+   Escreval("")
+
+   Escreva("Digite o valor de C: ")
+   Leia(c)
+   Escreval("")
+
+   se (a > b) entao
+      se (a > c) entao
+         Escreval("O maior valor é A =", a)
+      senao
+         Escreval("O maior valor é C =", c)
+      fimse
+   senao
+      se (b > c) entao
+         Escreval("O maior valor é B =", b)
+      senao
+         Escreval("O maior valor é C =", c)
+      fimse
+   fimse
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-29": {
   title: "Soma dos dois maiores",
   prompt: "Ler três valores diferentes e escrever a soma dos dois maiores valores.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex29"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê três valores diferentes e escreve a soma dos dois
+//               maiores valores.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 25/09/2026
+Var
+   // Seção de Declarações das variáveis
+   a, b, c, soma: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Soma dos Dois Maiores --")
+   Escreval("")
+
+   Escreva("Digite o valor de A: ")
+   Leia(a)
+   Escreval("")
+
+   Escreva("Digite o valor de B: ")
+   Leia(b)
+   Escreval("")
+
+   Escreva("Digite o valor de C: ")
+   Leia(c)
+   Escreval("")
+
+   se (a < b) e (a < c) entao
+      soma <- b + c
+      Escreval("A soma dos dois maiores valores (",b," +", c," ) é: ", soma)
+   senao
+      se (b < a) e (b < c) entao
+         soma <- a + c
+         Escreval("A soma dos dois maiores valores (",a," +",c," ) é: ", soma)
+      senao
+         soma <- a + b
+         Escreval("A soma dos dois maiores valores (",a," +",b," ) é: ", soma)
+      fimSe
+   fimSe
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-30": {
   title: "Ordem crescente de três valores",
   prompt: "Ler três valores diferentes e escrevê-los em ordem crescente.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex30"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê três valores diferentes e escreve-os em ordem
+//               crescente.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+Var
+   // Seção de Declarações das variáveis
+   a, b, c, auxiliar: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Ordem Crescente de Três Valores --")
+   Escreval("")
+
+   Escreva("Digite o valor de A: ")
+   Leia(a)
+   Escreval("")
+
+   Escreva("Digite o valor de B: ")
+   Leia(b)
+   Escreval("")
+
+   Escreva("Digite o valor de C: ")
+   Leia(c)
+   Escreval("")
+
+   se (a > b) entao
+      auxiliar <- a
+      a <- b
+      b <- auxiliar
+   fimse
+
+   se (a > c) entao
+      auxiliar <- a
+      a <- c
+      c <- auxiliar
+   fimse
+
+   se (b > c) entao
+      auxiliar <- b
+      b <- c
+      c <- auxiliar
+   fimse
+
+   Escreval("A ordem crescente dos valores é:",a," ->",b," ->",c)
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-31": {
   title: "Formação de triângulo",
   prompt: "Ler três valores A, B e C representando as medidas dos lados de um triângulo e informar se eles formam ou não um triângulo. Para formar um triângulo, cada lado deve ser menor que a soma dos outros dois lados.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex31"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê três valores (A, B e C) representando as medidas dos
+//               lados de um triângulo e escreve se formam ou não um
+//               triângulo. Para formar um triângulo, cada lado deve ser
+//               menor que a soma dos outros dois lados.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+Var
+   // Seção de Declarações das variáveis
+   a, b, c: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Formação de Triângulo --")
+   Escreval("")
+
+   Escreva("Digite o valor de A: ")
+   Leia(a)
+   Escreval("")
+
+   Escreva("Digite o valor de B: ")
+   Leia(b)
+   Escreval("")
+
+   Escreva("Digite o valor de C: ")
+   Leia(c)
+   Escreval("")
+
+   se (a < b + c) e (b < a + c) e (c < a + b) entao
+      Escreval("Os valores formam um triângulo")
+   senao
+      Escreval("Os valores não formam um triângulo")
+   fimse
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-32": {
   title: "Vencedor da partida",
   prompt: "Ler o nome de dois times e o número de gols marcados por cada um. Escrever o nome do time vencedor ou a palavra 'EMPATE' caso não haja vencedor.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex32"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê o nome de 2 times e o número de gols marcados na
+//               partida (para cada time). Escreve o nome do vencedor, ou
+//               a palavra EMPATE caso não haja vencedor.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+Var
+   // Seção de Declarações das variáveis
+   nomeTime1, nomeTime2: caractere
+   golsTime1, golsTime2: inteiro
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Vencedor da Partida --")
+   Escreval("")
+
+   Escreva("Digite o nome do Time 1: ")
+   Leia(nomeTime1)
+   Escreval("")
+
+   Escreva("Digite os gols do Time 1: ")
+   Leia(golsTime1)
+   Escreval("")
+
+   Escreva("Digite o nome do Time 2: ")
+   Leia(nomeTime2)
+   Escreval("")
+
+   Escreva("Digite os gols do Time 2: ")
+   Leia(golsTime2)
+   Escreval("")
+
+   se (golsTime1 > golsTime2) entao
+      Escreval("O vencedor é:", nomeTime1, "!")
+   senao
+      se (golsTime2 > golsTime1) entao
+         Escreval("O vencedor é: ", nomeTime2, "!")
+      senao
+         Escreval("EMPATE")
+      fimse
+   fimse
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-33": {
   title: "Comparação de números",
   prompt: "Ler dois valores e imprimir 'Números iguais' caso sejam iguais, 'Primeiro é maior' caso o primeiro seja maior ou 'Segundo maior' caso o segundo seja maior.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex33"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê dois valores e imprime 'Números iguais' caso sejam
+//               iguais, 'Primeiro é maior' caso o primeiro seja maior que
+//               o segundo, ou 'Segundo maior' caso o segundo seja maior
+//               que o primeiro.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+Var
+   // Seção de Declarações das variáveis
+   numero1, numero2: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Comparação de Números --")
+   Escreval("")
+
+   Escreva("Digite o primeiro número: ")
+   Leia(numero1)
+   Escreval("")
+
+   Escreva("Digite o segundo valor: ")
+   Leia(numero2)
+   Escreval("")
+
+   se (numero1 = numero2) entao
+      Escreval("Números iguais!")
+   senao
+      se (numero1 > numero2) entao
+         Escreval("Primeiro é maior!")
+      senao
+         Escreval("Segundo maior!")
+      fimse
+   fimse
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-34": {
   title: "Análise de algoritmo",
   prompt: "Analisar o algoritmo apresentado no exercício e identificar os erros existentes em sua estrutura e instruções.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex34"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Calcula a variável Z baseado em X e Y e define uma resposta
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+
+Var
+   // Seção de Declarações das variáveis
+   x, y, z: real
+   resposta: caractere
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Teste de Condicionais --")
+   Escreval("")
+
+   Escreva("Digite o valor de X: ")
+   Leia(x)
+   Escreval("")
+
+   Escreva("Digite o valor de Y: ")
+   Leia(y)
+   Escreval("")
+
+   z <- (x * y) + 5
+
+   se (z <= 0) entao
+      resposta <- "A"
+   senao
+      se (z <= 100) entao
+         resposta <- "B"
+      senao
+         resposta <- "C"
+      fimse
+   fimse
+
+   Escreval("Z = ", z)
+   Escreval("Resposta = ", resposta)
+
+Fimalgoritmo
+`,
 },
 
 "faccat-6–8-35": {
   title: "Posto de combustíveis",
   prompt: "Ler o número de litros vendidos e o tipo de combustível, sendo A para álcool e G para gasolina. Calcular o valor a pagar considerando álcool a R$ 2,90, gasolina a R$ 3,30 e os descontos definidos para até 20 litros e acima de 20 litros.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex35"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê o número de litros vendidos e o tipo de combustível
+//               (A-álcool, G-gasolina). Calcula e imprime o valor a ser
+//               pago pelo cliente, sabendo-se que o preço do litro da
+//               gasolina é R$ 3,30 e o preço do litro do álcool é R$ 2,90,
+//               com os descontos definidos para até 20 litros e acima de
+//               20 litros.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+Var
+   // Seção de Declarações das variáveis
+   litros: real
+   tipoCombustivel: caractere
+   precoLitro, desconto, valorPagar: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Posto de Combustíveis --")
+   Escreval("")
+
+   Escreva("Digite a quantidade de litros vendidos: ")
+   Leia(litros)
+   Escreval("")
+
+   Escreva("Digite o tipo de combustível (A-álcool, G-gasolina): ")
+   Leia(tipoCombustivel)
+   Escreval("")
+
+   se (tipoCombustivel = "A") ou (tipoCombustivel = "a") entao
+      precoLitro <- 2.90
+
+      se (litros <= 20) entao
+         desconto <- 0.03
+      senao
+         desconto <- 0.05
+      fimse
+   senao
+      precoLitro <- 3.30
+
+      se (litros <= 20) entao
+         desconto <- 0.04
+      senao
+         desconto <- 0.06
+      fimse
+   fimse
+
+   valorPagar <- litros * precoLitro * (1 - desconto)
+
+   Escreval("O valor a ser pago pelo cliente é: R$", valorPagar:6:2)
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-36": {
   title: "Idades de homens e mulheres",
   prompt: "Ler as idades de dois homens e duas mulheres. Calcular e escrever a soma da idade do homem mais velho com a mulher mais nova e o produto da idade do homem mais novo com a mulher mais velha.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex36"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê as idades de 2 homens e de 2 mulheres (idades dos
+//               homens sempre diferentes entre si, bem como as das
+//               mulheres). Calcula e escreve a soma das idades do homem
+//               mais velho com a mulher mais nova, e o produto das
+//               idades do homem mais novo com a mulher mais velha.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+Var
+   // Seção de Declarações das variáveis
+   idadeHomem1, idadeHomem2, idadeMulher1, idadeMulher2: inteiro
+   homemVelho, homemNovo, mulherVelha, mulherNova: inteiro
+   soma, produto: inteiro
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Idades de Homens e Mulheres --")
+   Escreval("")
+
+   Escreva("Digite a idade da 1° mulher: ")
+   Leia(idadeMulher1)
+   Escreval("")
+
+   Escreva("Digite a idade da 2° mulher: ")
+   Leia(idadeMulher2)
+   Escreval("")
+
+   Escreva("Digite a idade do 1° homem: ")
+   Leia(idadeHomem1)
+   Escreval("")
+
+   Escreva("Digite a idade do 2° homem: ")
+   Leia(idadeHomem2)
+   Escreval("")
+
+   se (idadeMulher1 > idadeMulher2) entao
+      mulherVelha <- idadeMulher1
+      mulherNova <- idadeMulher2
+   senao
+      mulherVelha <- idadeMulher2
+      mulherNova <- idadeMulher1
+   fimse
+
+   se (idadeHomem1 > idadeHomem2) entao
+      homemVelho <- idadeHomem1
+      homemNovo <- idadeHomem2
+   senao
+      homemVelho <- idadeHomem2
+      homemNovo <- idadeHomem1
+   fimse
+
+   soma <- homemVelho + mulherNova
+   produto <- homemNovo * mulherVelha
+
+   Escreval("A soma do homem mais velho com a mulher mais nova é:", soma)
+   Escreval("O produto do homem mais novo com a mulher mais velha é:", produto)
+
+Fimalgoritmo`,
 },
 
 "faccat-6–8-37": {
   title: "Fruteira",
   prompt: "Ler a quantidade de morangos e maçãs adquiridas. Calcular o valor da compra usando os preços por quilo definidos para até 5 kg e acima de 5 kg. Se a quantidade total ultrapassar 8 kg ou o valor da compra ultrapassar R$ 25,00, aplicar desconto de 10%.",
-  code: ``,
+  code: `Algoritmo "faccat_Pg6-8-Ex37"
+// Disciplina  : [Lógica de Programação com JavaScript]
+// Professor   : Jailson Costa dos Santos
+// Descrição   : Lê a quantidade (em Kg) de morangos e a quantidade (em Kg)
+//               de maçãs adquiridas e escreve o valor a ser pago pelo
+//               cliente. Se comprar mais de 8 Kg em frutas ou o valor
+//               total ultrapassar R$ 25,00, recebe desconto de 10%.
+// Autor(a)    : Gilvam J. T. de Oliveira
+// Data atual  : 26/09/2026
+Var
+   // Seção de Declarações das variáveis
+   kgMorango, kgMaca: real
+   valorMorango, valorMaca, totalKg, valorTotal: real
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Escreval("-- Fruteira --")
+   Escreval("")
+
+   Escreva("Digite a quantidade de morangos (Kg): ")
+   Leia(kgMorango)
+   Escreval("")
+
+   Escreva("Digite a quantidade de maçãs (Kg): ")
+   Leia(kgMaca)
+   Escreval("")
+
+   se (kgMorango <= 5) entao
+      valorMorango <- kgMorango * 2.50
+   senao
+      valorMorango <- kgMorango * 2.20
+   fimse
+
+   se (kgMaca <= 5) entao
+      valorMaca <- kgMaca * 1.80
+   senao
+      valorMaca <- kgMaca * 1.50
+   fimse
+
+   totalKg <- kgMorango + kgMaca
+   valorTotal <- valorMorango + valorMaca
+
+   se (totalKg > 8) ou (valorTotal > 25) entao
+      valorTotal <- valorTotal * 0.90
+   fimse
+
+   Escreval("O valor a ser pago pelo cliente é: R$", valorTotal:6:2)
+
+Fimalgoritmo`,
 },
   
   "faccat-6–8-38": {
