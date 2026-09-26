@@ -91,6 +91,7 @@
       )
       .join("");
   };
+  let originalCode = "";
   const open = (x) => {
     form.reset();
     Object.entries(
@@ -110,8 +111,116 @@
       ? `Exercício ${x.number}`
       : "Novo exercício";
     document.querySelector("#remove").hidden = !x;
+    originalCode = (x && x.code) || "";
+    resetConsole();
     dialog.showModal();
   };
+
+  // --- Testador de código VisualG, direto no navegador ---
+  const testConsole = document.querySelector("#test-console");
+  const testRunBtn = document.querySelector("#test-run");
+  const testResetBtn = document.querySelector("#test-reset");
+  const inputRow = document.querySelector("#test-input-row");
+  const testInput = document.querySelector("#test-input");
+  const testInputSend = document.querySelector("#test-input-send");
+  let running = false;
+  let stopRequested = false;
+  let pendingInput = null;
+
+  function resetConsole() {
+    testConsole.textContent = "";
+    inputRow.hidden = true;
+    running = false;
+    stopRequested = false;
+    pendingInput = null;
+    testRunBtn.textContent = "▶ Executar";
+    testRunBtn.disabled = false;
+  }
+
+  function printLine(text, cls) {
+    const atBottom =
+      testConsole.scrollTop + testConsole.clientHeight >=
+      testConsole.scrollHeight - 4;
+    if (cls) {
+      const span = document.createElement("span");
+      span.className = cls;
+      span.textContent = text;
+      testConsole.appendChild(span);
+    } else {
+      testConsole.appendChild(document.createTextNode(text));
+    }
+    if (atBottom) testConsole.scrollTop = testConsole.scrollHeight;
+  }
+
+  function askInput(name) {
+    return new Promise((resolve) => {
+      inputRow.hidden = false;
+      testInput.value = "";
+      testInput.placeholder = `Valor para "${name}" — pressione Enter`;
+      testInput.focus();
+      pendingInput = (value) => {
+        inputRow.hidden = true;
+        printLine(value + "\n", "test-echo");
+        resolve(value);
+      };
+    });
+  }
+
+  const submitInput = () => {
+    if (!pendingInput) return;
+    const value = testInput.value;
+    const send = pendingInput;
+    pendingInput = null;
+    send(value);
+  };
+  testInputSend.addEventListener("click", submitInput);
+  testInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      submitInput();
+    }
+  });
+
+  testResetBtn.addEventListener("click", () => {
+    form.elements.code.value = originalCode;
+    resetConsole();
+  });
+
+  testRunBtn.addEventListener("click", async () => {
+    if (running) {
+      stopRequested = true;
+      return;
+    }
+    testConsole.textContent = "";
+    inputRow.hidden = true;
+    running = true;
+    testRunBtn.textContent = "■ Parar";
+    testResetBtn.disabled = true;
+    const io = {
+      write: (t) => printLine(t),
+      writeln: (t) => printLine(t + "\n"),
+      read: (name) => askInput(name),
+      shouldStop: () => stopRequested,
+    };
+    try {
+      const ast = window.VisualG.compile(form.elements.code.value);
+      const interp = new window.VisualG.Interpreter(io);
+      await interp.run(ast);
+      printLine("\n[fim da execução]", "test-echo");
+    } catch (err) {
+      inputRow.hidden = true;
+      printLine(
+        "\n" + (err && err.message ? err.message : "Erro ao executar o código.") + "\n",
+        "test-error",
+      );
+    } finally {
+      running = false;
+      stopRequested = false;
+      pendingInput = null;
+      testRunBtn.textContent = "▶ Executar";
+      testResetBtn.disabled = false;
+    }
+  });
   document.querySelector("#groups").addEventListener("click", (e) => {
     const card = e.target.closest(".exercise-card");
     if (card) open(exercises.find((x) => x.id === card.dataset.id));
