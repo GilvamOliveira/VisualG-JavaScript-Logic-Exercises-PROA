@@ -30,10 +30,27 @@
             <div class="actions"><button class="secondary" type="button" id="remove">Excluir</button><button
                     class="primary" value="save">Salvar</button></div>
         </form>
+        <div class="test-panel">
+            <div class="test-panel-head">
+                <h3>Testar código</h3>
+                <div class="test-actions">
+                    <button class="secondary" type="button" id="test-reset">↺ Restaurar original</button>
+                    <button class="primary" type="button" id="test-run">▶ Executar</button>
+                </div>
+            </div>
+            <p class="test-hint">Roda o código VisualG acima direto aqui na página, sem precisar instalar o VisualG.
+            </p>
+            <pre class="test-console" id="test-console"></pre>
+            <div class="test-input-row" id="test-input-row" hidden>
+                <input id="test-input" type="text" autocomplete="off" placeholder="Digite o valor pedido pelo Leia() e pressione Enter">
+                <button type="button" id="test-input-send">Enviar</button>
+            </div>
+        </div>
     </dialog>
     <script src="../data/exercises.js"></script>
     <script src="../data/exercise-details.js"></script>
     <script src="../data/visualg-matches.js"></script>
+    <script src="../js/visualg-interpreter.js"></script>
     <script src="../js/exercises.js"></script>
 </body>
 
