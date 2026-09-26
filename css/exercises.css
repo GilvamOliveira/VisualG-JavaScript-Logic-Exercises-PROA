@@ -249,6 +249,105 @@ textarea {
     background: #fff0f2
 }
 
+.test-panel {
+    margin: 0 24px 24px;
+    padding-top: 18px;
+    border-top: 1px solid #e3e8f5
+}
+
+.test-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.test-panel-head h3 {
+    margin: 0;
+    font-size: .95rem
+}
+
+.test-actions {
+    display: flex;
+    gap: 8px
+}
+
+.test-actions button {
+    padding: 8px 13px;
+    border: 0;
+    border-radius: 9px;
+    font: 700 .82rem inherit;
+    cursor: pointer
+}
+
+.test-actions .primary {
+    color: #fff;
+    background: var(--accent)
+}
+
+.test-actions .secondary {
+    color: #43506a;
+    background: #eef1fa
+}
+
+.test-actions button:disabled {
+    opacity: .55;
+    cursor: not-allowed
+}
+
+.test-hint {
+    margin: 8px 0 0;
+    color: #71809f;
+    font-size: .76rem
+}
+
+.test-console {
+    height: 190px;
+    margin: 12px 0 0;
+    padding: 12px 14px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    border-radius: 11px;
+    background: #12182b;
+    color: #e3e9ff;
+    font: 400 .84rem/1.5 "SFMono-Regular", Consolas, Menlo, monospace
+}
+
+.test-console .test-error {
+    color: #ff9b9b
+}
+
+.test-console .test-echo {
+    color: #7fd8a3
+}
+
+.test-input-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px
+}
+
+.test-input-row input {
+    flex: 1;
+    margin: 0;
+    padding: 9px 11px;
+    border: 1px solid #ccd6ec;
+    border-radius: 9px;
+    font: 400 .9rem inherit
+}
+
+.test-input-row button {
+    padding: 9px 15px;
+    border: 0;
+    border-radius: 9px;
+    color: #fff;
+    background: var(--accent);
+    font: 700 .85rem inherit;
+    cursor: pointer
+}
+
 @media(max-width:520px) {
     .group {
         padding: 16px
