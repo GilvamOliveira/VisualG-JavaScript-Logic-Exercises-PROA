@@ -2578,10 +2578,10 @@ Inicio
 Fimalgoritmo`,
 },
 
-"faccat-6–8-22": {
+"faccat-5–6-22": {
   title: "Hora extra",
   prompt: "Ler o número de horas trabalhadas em um mês e o salário por hora. Calcular o salário total, acrescentando hora extra para as horas que ultrapassarem 40 horas semanais, considerando um mês com 4 semanas exatas e adicional de 50%.",
-  code: `Algoritmo "faccat_Pg6-8-Ex22"
+  code: `Algoritmo "faccat_Pg5-6-Ex22"
 // Disciplina  : [Lógica de Programação com JavaScript]
 // Professor   : Jailson Costa dos Santos
 // Descrição   : A jornada de trabalho semanal é de 40 horas (mês com 4
@@ -2620,10 +2620,10 @@ Inicio
 Fimalgoritmo`,
 },
 
-"faccat-6–8-23": {
-  title: "Erros no algoritmo",
+"faccat-5–6-23": {
+  title: "Erros no algoritmo, peso ideal",
   prompt: "Identificar os erros existentes em um algoritmo que recebe nome, altura e sexo de uma pessoa e calcula seu peso ideal. Para homens, utilizar (72,7 × altura) - 58; para mulheres, utilizar (62,1 × altura) - 44,7.",
-  code: `Algoritmo "faccat_Pg6-8-Ex23"
+  code: `Algoritmo "faccat_Pg5-6-Ex23"
 // Disciplina  : [Lógica de Programação com JavaScript]
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Identificação e correção dos erros do algoritmo original
@@ -2687,10 +2687,10 @@ Inicio
 Fimalgoritmo`,
 },
 
-"faccat-6–8-24": {
+"faccat-5–6-24": {
   title: "Comissão do vendedor",
   prompt: "Ler o salário fixo e o valor das vendas efetuadas por um vendedor. Calcular o salário total considerando comissão de 3% sobre as vendas até R$ 1.500,00 e 5% sobre o valor que ultrapassar R$ 1.500,00.",
-  code: `Algoritmo "faccat_Pg6-8-Ex24"
+  code: `Algoritmo "faccat_Pg5-6-Ex24"
 // Disciplina  : [Lógica de Programação com JavaScript]
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Lê o salário fixo e o valor das vendas efetuadas por um
@@ -2729,10 +2729,10 @@ Inicio
 Fimalgoritmo`,
 },
 
-"faccat-6–8-25": {
+"faccat-5–6-25": {
   title: "Saldo bancário",
   prompt: "Ler o número da conta, saldo, débito e crédito de um cliente. Calcular o saldo atual usando saldo - débito + crédito e informar se o saldo é positivo ou negativo.",
-  code: `Algoritmo "faccat_Pg6-8-Ex25"
+  code: `Algoritmo "faccat_Pg5-6-Ex25"
 // Disciplina  : [Lógica de Programação com JavaScript]
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Lê o número da conta, saldo, débito e crédito de um
@@ -2779,10 +2779,10 @@ Inicio
 Fimalgoritmo`,
 },
 
-"faccat-6–8-26": {
+"faccat-5–6-26": {
   title: "Controle de estoque",
   prompt: "Ler a quantidade atual, máxima e mínima em estoque de um produto. Calcular a quantidade média entre a máxima e a mínima e informar se deve efetuar compra ou não.",
-  code: `Algoritmo "faccat_Pg6-8-Ex26"
+  code: `Algoritmo "faccat_Pg5-6-Ex26"
 // Disciplina  : [Lógica de Programação com JavaScript]
 // Professor   : Jailson Costa dos Santos
 // Descrição   : Lê a quantidade atual, máxima e mínima em estoque de um
