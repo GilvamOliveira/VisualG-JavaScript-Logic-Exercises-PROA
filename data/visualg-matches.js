@@ -1582,10 +1582,12 @@ Inicio
    resto <- dividendo
    resultado <- 0
 
-   repita
-      resto <- resto - divisor
-      resultado <- resultado + 1
-   ate (resto < divisor)
+   se (dividendo >= divisor) entao
+      repita
+         resto <- resto - divisor
+         resultado <- resultado + 1
+      ate (resto < divisor)
+   fimse
 
    Escreval(dividendo, " dividido por ", divisor, " é igual a: ", resultado)
 
