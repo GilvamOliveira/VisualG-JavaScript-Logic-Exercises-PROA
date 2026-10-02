@@ -1340,7 +1340,7 @@ Inicio
    somaFatoriais <- 0
 
    repita
-      Escreva("Digite o valor",contadora, ": ")
+      Escreva("Digite o valor ",contadora, ": ")
       Leia(valor)
       Escreval("")
 
