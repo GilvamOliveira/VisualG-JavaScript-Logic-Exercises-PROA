@@ -29,7 +29,7 @@ Inicio
 
    fahrenheit <- (9 * celsius + 160) / 5
 
-   Escreval("A conversão da temperatura Celsius em Fahrenheit é:", fahrenheit, "°F")
+   Escreval("A conversão da temperatura Celsius em Fahrenheit é: ", fahrenheit, "°F")
    Escreval("")
 
    Escreval("                         ---  ---                        ")
@@ -66,7 +66,7 @@ Inicio
 
    celsius <- (fahrenheit - 32) * (5 / 9)
 
-   Escreval("A conversão da temperatura Fahrenheit em Celsius é:", celsius, "°C")
+   Escreval("A conversão da temperatura Fahrenheit em Celsius é: ", celsius, "°C")
    Escreval("")
 
    Escreval("                         ---  ---                        ")
@@ -155,16 +155,16 @@ Inicio
    
    Escreval("              ---  ---              ")
 
-   Escreva("A velocidade média utilizada foi de: ", velocidade, "Km/h")
+   Escreva("A velocidade média utilizada foi de: ", velocidade, " Km/h")
    Escreval("")
    
-   Escreva("O tempo gasto no percurso foi de: ", temp, "h")
+   Escreva("O tempo gasto no percurso foi de: ", temp, " h")
    Escreval("")
 
-   Escreva("A distância percorrida foi de: ", distancia, "Km")
+   Escreva("A distância percorrida foi de: ", distancia, " Km")
    Escreval("")
    
-   Escreva("A quantidade de litros utilizados foi de: ", litrosUsados, "L")
+   Escreva("A quantidade de litros utilizados foi de: ", litrosUsados, " L")
    Escreval("")
 
    Escreval("              ---  ---              ")
@@ -208,8 +208,8 @@ Inicio
    prestacao <- valor + (valor * taxa / 100) * temp
    diferenca <- prestacao - valor
    
-   Escreval("O valor em atraso será de: R$", prestacao:6:2)
-   Escreval("O valor do juros é de: R$", diferenca:6:2)
+   Escreval("O valor em atraso será de: R$ ", prestacao:6:2)
+   Escreval("O valor do juros é de: R$ ", diferenca:6:2)
 
 Fimalgoritmo`,
   },
@@ -248,7 +248,7 @@ Inicio
    a <- b
    b <- auxiliar
 
-   Escreval("A =", a, " | " ,"B =", b)
+   Escreval("A = ", a, " | ", "B = ", b)
 
 Fimalgoritmo`,
   },
@@ -314,12 +314,12 @@ Inicio
    multBD <- b * d
    multCD <- c * d
 
-   Escreval("A + B =", somAB, " | " ,"A * B =", multAB)
-   Escreval("A + C =", somAC, " | " ,"A * C =", multAC)
-   Escreval("A + D =", somAD, " | " ,"A * D =", multAD)
-   Escreval("B + C =", somBC, " | " ,"B * C =", multBC)
-   Escreval("B + D =", somBD, " | " ,"B * D =", multBD)
-   Escreval("C + D =", somCD, " | " ,"C * D =", multCD)
+   Escreval("A + B = ", somAB, " | ", "A * B = ", multAB)
+   Escreval("A + C = ", somAC, " | ", "A * C = ", multAC)
+   Escreval("A + D = ", somAD, " | ", "A * D = ", multAD)
+   Escreval("B + C = ", somBC, " | ", "B * C = ", multBC)
+   Escreval("B + D = ", somBD, " | ", "B * D = ", multBD)
+   Escreval("C + D = ", somCD, " | ", "C * D = ", multCD)
    
 Fimalgoritmo`,
   },
@@ -358,7 +358,7 @@ Inicio
 
    volume <- comprimento * largura * altura
 
-   Escreval("O volume da caixa retangular é:", volume)
+   Escreval("O volume da caixa retangular é: ", volume)
 
 Fimalgoritmo`,
   },
@@ -429,7 +429,7 @@ Inicio
 
    reais <- cotacao * dolar
 
-   Escreval("A quantidade de dólares em reais que possui é: R$", reais:4:2)
+   Escreval("A quantidade de dólares em reais que possui é: R$ ", reais:4:2)
 
 Fimalgoritmo`,
   },
@@ -464,7 +464,7 @@ Inicio
 
    dolar <- reais / cotacao
 
-   Escreval("A quantidade de reais em dólares que possui é: U$", dolar:4:2)
+   Escreval("A quantidade de reais em dólares que possui é: U$ ", dolar:4:2)
 
 Fimalgoritmo`,
   },
@@ -506,7 +506,7 @@ Inicio
 
    valorFinal <- (A ^ 2) + (B ^ 2) + (C ^ 2)
 
-   Escreval("A soma dos quadrados dos três valores é:", valorFinal)
+   Escreval("A soma dos quadrados dos três valores é: ", valorFinal)
 
 Fimalgoritmo`,
   },
@@ -548,7 +548,7 @@ Inicio
 
    valorFinal <- (A + B + C) ^ 2
 
-   Escreval("O quadrado da soma dos três valores é:", valorFinal)
+   Escreval("O quadrado da soma dos três valores é: ", valorFinal)
 
 Fimalgoritmo`,
   },
@@ -598,8 +598,8 @@ Inicio
    variavelP <- a * c
    variavelS <- b + d
 
-   Escreval("O produto do 1° valor (",a," ) pelo 3° valor (",c," ) (P) é: ", variavelP)
-   Escreval("A soma do 2° valor (",b," ) com o 4° valor (",d," ) (S) é: ", variavelS)
+   Escreval("O produto do 1° valor (", a, ") pelo 3° valor (", c, ") (P) é: ", variavelP)
+   Escreval("A soma do 2° valor (", b, ") com o 4° valor (", d, ") (S) é: ", variavelS)
 
 Fimalgoritmo`,
   },
@@ -640,10 +640,10 @@ Inicio
    variavelReajuste <- variavelSalarioMensal * (variavelPercentualReajuste / 100)
    variavelNovoSalario <- variavelSalarioMensal + variavelReajuste
 
-   Escreval("O valor do reajuste foi de: R$", variavelReajuste)
+   Escreval("O valor do reajuste foi de: R$ ", variavelReajuste)
    Escreval("")
 
-   Escreval("O valor do novo salário é: R$", variavelNovoSalario)
+   Escreval("O valor do novo salário é: R$ ", variavelNovoSalario)
 
 Fimalgoritmo`,
   },
@@ -745,7 +745,7 @@ Inicio
 
    enquanto (contadora <= 10) faca
       resultado <- contadora * numero
-      Escreval(numero," x",contadora," =",resultado)
+      Escreval(numero, " x ", contadora, " = ", resultado)
 
       contadora <- contadora + 1
    fimenquanto
@@ -814,7 +814,7 @@ Inicio
       contadora <- contadora + 1
    fimenquanto
 
-   Escreval("O resultado da soma dos pares de 1 a 500 é:",soma)
+   Escreval("O resultado da soma dos pares de 1 a 500 é: ", soma)
 
 Fimalgoritmo`,
   },
@@ -879,7 +879,7 @@ Inicio
    contadora <- 0
 
    enquanto (contadora <= 15) faca
-      Escreval("3 elevado a",contadora," =",resultado)
+      Escreval("3 elevado a ", contadora, " = ", resultado)
       resultado <- resultado * 3
       contadora <- contadora + 1
    fimenquanto
@@ -923,7 +923,7 @@ Inicio
       contadora <- contadora - 1
    fimenquanto
 
-   Escreval(base," elevado a",expoente," =",resultado)
+   Escreval(base, " elevado a ", expoente, " = ", resultado)
 
 Fimalgoritmo`,
   },
@@ -990,7 +990,7 @@ Inicio
    enquanto (celsius <= 100) faca
       fahrenheit <- (9 * celsius + 160) / 5
 
-      Escreval("A conversão de",celsius,"°C para fahrenheit é de:",fahrenheit,"°F")
+      Escreval("A conversão de ", celsius, "°C para Fahrenheit é de: ", fahrenheit, "°F")
 
       celsius <- celsius + 10
    fimenquanto
@@ -1032,8 +1032,8 @@ Inicio
 
    media <- soma / 10
 
-   Escreval("O somatório dos valores lidos é:", soma)
-   Escreval("A média aritmética dos valores lidos é:", media)
+   Escreval("O somatório dos valores lidos é: ", soma)
+   Escreval("A média aritmética dos valores lidos é: ", media)
 
 Fimalgoritmo`,
   },
@@ -1074,8 +1074,8 @@ Inicio
 
    media <- soma / quantidade
 
-   Escreval("A soma dos valores pares de 50 a 70 é:", soma)
-   Escreval("A média aritmética dos valores pares de 50 a 70 é:", media)
+   Escreval("A soma dos valores pares de 50 a 70 é: ", soma)
+   Escreval("A média aritmética dos valores pares de 50 a 70 é: ", media)
 
 Fimalgoritmo`,
   },
@@ -1121,7 +1121,7 @@ Inicio
       areaComodo <- largura * comprimento
       areaTotal <- areaTotal + areaComodo
 
-      Escreval("A área do cômodo ", nomeComodo, " é de:", areaComodo)
+      Escreval("A área do cômodo ", nomeComodo, " é de: ", areaComodo)
       Escreval("")
 
       Escreva("Deseja continuar (S/N)? ")
@@ -1129,7 +1129,7 @@ Inicio
       Escreval("")
    fimenquanto
 
-   Escreval("A área total da residência é de:", areaTotal)
+   Escreval("A área total da residência é de: ", areaTotal)
 
 Fimalgoritmo`,
   },
@@ -1176,8 +1176,8 @@ Inicio
       Escreval("")
    fimenquanto
 
-   Escreval("O maior número informado foi:", maior)
-   Escreval("O menor número informado foi:", menor)
+   Escreval("O maior número informado foi: ", maior)
+   Escreval("O menor número informado foi: ", menor)
 
 Fimalgoritmo`,
   },
@@ -1203,7 +1203,7 @@ Inicio
 
    repita
       quadrado <- numero ^ 2
-      Escreval("O quadrado de", numero," é:", quadrado)
+      Escreval("O quadrado de ", numero, " é: ", quadrado)
 
       numero <- numero + 1
    ate (numero > 200)
@@ -1241,7 +1241,7 @@ Inicio
       contadora <- contadora + 1
    ate (contadora > 500)
 
-   Escreval("O resultado da soma dos pares de 1 a 500 é:", soma)
+   Escreval("O resultado da soma dos pares de 1 a 500 é: ", soma)
 
 Fimalgoritmo`,
   },
@@ -1311,7 +1311,7 @@ Inicio
       quadro <- quadro + 1
    ate (quadro > 64)
 
-   Escreval("O total de grãos de trigo no tabuleiro é:", total)
+   Escreval("O total de grãos de trigo no tabuleiro é: ", total)
 
 Fimalgoritmo`,
   },
@@ -1400,9 +1400,9 @@ Inicio
 
    media <- soma / quantidade
 
-   Escreval("A somatória dos números positivos lidos é:", soma)
-   Escreval("A quantidade de números lidos foi:", quantidade)
-   Escreval("A média aritmética dos números lidos é:", media:6:2)
+   Escreval("A somatória dos números positivos lidos é: ", soma)
+   Escreval("A quantidade de números lidos foi: ", quantidade)
+   Escreval("A média aritmética dos números lidos é: ", media:6:2)
 
 Fimalgoritmo`,
   },
@@ -1487,7 +1487,7 @@ Inicio
       areaComodo <- largura * comprimento
       areaTotal <- areaTotal + areaComodo
 
-      Escreval("A área do cômodo ", nomeComodo, " é de:", areaComodo)
+      Escreval("A área do cômodo ", nomeComodo, " é de: ", areaComodo)
       Escreval("")
 
       Escreva("Deseja continuar (S/N)? ")
@@ -1495,7 +1495,7 @@ Inicio
       Escreval("")
    ate (resposta = "N") ou (resposta = "n")
 
-   Escreval("A área total da residência é de:", areaTotal)
+   Escreval("A área total da residência é de: ", areaTotal)
 
 Fimalgoritmo`,
   },
@@ -1545,8 +1545,8 @@ Inicio
       fimse
    ate (numero < 0)
 
-   Escreval("O maior número informado foi:", maior)
-   Escreval("O menor número informado foi:", menor)
+   Escreval("O maior número informado foi: ", maior)
+   Escreval("O menor número informado foi: ", menor)
 
 Fimalgoritmo`,
   },
@@ -1587,7 +1587,7 @@ Inicio
       resultado <- resultado + 1
    ate (resto < divisor)
 
-   Escreval(dividendo," dividido por",divisor," é igual a:", resultado)
+   Escreval(dividendo, " dividido por ", divisor, " é igual a: ", resultado)
 
 Fimalgoritmo`,
   },
@@ -1612,7 +1612,7 @@ Inicio
 
    para numero de 15 ate 200 faca
       quadrado <- numero ^ 2
-      Escreval("O quadrado de", numero," é:", quadrado)
+      Escreval("O quadrado de ", numero, " é: ", quadrado)
    fimpara
 
 Fimalgoritmo`,
@@ -1643,7 +1643,7 @@ Inicio
 
    para contadora de 1 ate 10 faca
       resultado <- contadora * numero
-      Escreval(numero," x",contadora," =",resultado)
+      Escreval(numero, " x ", contadora, " = ", resultado)
    fimpara
 
 Fimalgoritmo`,
@@ -1674,7 +1674,7 @@ Inicio
       soma <- soma + contadora
    fimpara
 
-   Escreval("O resultado da soma dos cem primeiros números inteiros é:", soma)
+   Escreval("O resultado da soma dos cem primeiros números inteiros é: ", soma)
 
 Fimalgoritmo`,
   },
@@ -1706,7 +1706,7 @@ Inicio
       fimse
    fimpara
 
-   Escreval("O resultado da soma dos pares de 1 a 500 é:", soma)
+   Escreval("O resultado da soma dos pares de 1 a 500 é: ", soma)
 
 Fimalgoritmo`,
   },
@@ -1794,7 +1794,7 @@ Inicio
    resultado <- 1
 
    para contadora de 0 ate 15 faca
-      Escreval("3 elevado a",contadora," =",resultado)
+      Escreval("3 elevado a ", contadora, " = ", resultado)
       resultado <- resultado * 3
    fimpara
 
@@ -1835,7 +1835,7 @@ Inicio
       resultado <- resultado * base
    fimpara
 
-   Escreval(base," elevado a",expoente," =",resultado)
+   Escreval(base, " elevado a ", expoente, " = ", resultado)
 
 Fimalgoritmo`,
   },
@@ -1898,7 +1898,7 @@ Inicio
    para celsius de 10 ate 100 passo 10 faca
       fahrenheit <- (9 * celsius + 160) / 5
 
-      Escreval("A conversão de",celsius,"°C para fahrenheit é de:",fahrenheit,"°F")
+      Escreval("A conversão de ", celsius, "°C para Fahrenheit é de: ", fahrenheit, "°F")
    fimpara
 
 Fimalgoritmo`,
@@ -1931,7 +1931,7 @@ Inicio
             fatorial <- fatorial * multiplicador
          fimpara
 
-         Escreval("O fatorial de", contadora," é:", fatorial)
+         Escreval("O fatorial de ", contadora, " é: ", fatorial)
       fimse
    fimpara
 
@@ -1963,7 +1963,7 @@ Inicio
 
    antecessor <- numero - 1
 
-   Escreval("O antecessor do número digitado é:", antecessor)
+   Escreval("O antecessor do número digitado é: ", antecessor)
 
 Fimalgoritmo`,
   },
@@ -1997,7 +1997,7 @@ Inicio
 
    area <- base * altura
 
-   Escreval("A área do retângulo é:",area)
+   Escreval("A área do retângulo é: ", area)
 
 Fimalgoritmo`,
   },
@@ -2037,7 +2037,7 @@ Inicio
    
    totalDias <- (anos * 365) + (meses * 30) + dias
    
-   Escreval("Dias desde o seu nascimento:",totalDias)
+   Escreval("Dias desde o seu nascimento: ", totalDias)
 
 Fimalgoritmo`,
   },
@@ -2084,9 +2084,9 @@ Inicio
    percentualNulos <- votosNulos * 100 / totalEleitores
    percentualValidos <- votosValidos * 100 / totalEleitores
 
-   Escreval("O percentual de votos brancos é:", percentualBrancos:1:2, "%")
-   Escreval("O percentual de votos nulos é:", percentualNulos:1:2, "%")
-   Escreval("O percentual de votos válidos é:", percentualValidos:1:2, "%")
+   Escreval("O percentual de votos brancos é: ", percentualBrancos:1:2, "%")
+   Escreval("O percentual de votos nulos é: ", percentualNulos:1:2, "%")
+   Escreval("O percentual de votos válidos é: ", percentualValidos:1:2, "%")
 
 Fimalgoritmo`,
 },
@@ -2121,8 +2121,8 @@ Inicio
    aumento <- percentualReajuste * salarioAtual / 100
    novoSalario <- salarioAtual + aumento
 
-   Escreval("O valor do novo salário é: R$", novoSalario:6:2)
-   Escreval("O valor do reajuste salarial é: R$", aumento:6:2)
+   Escreval("O valor do novo salário é: R$ ", novoSalario:6:2)
+   Escreval("O valor do reajuste salarial é: R$ ", aumento:6:2)
 
 Fimalgoritmo`,
 },
@@ -2156,7 +2156,7 @@ Inicio
    percentualImpostos <- custoFabrica * 45 / 100
    custoFinal <- custoFabrica + percentualDistribuidor + percentualImpostos
 
-   Escreval("O custo final ao consumidor é: R$", custoFinal:6:2)
+   Escreval("O custo final ao consumidor é: R$ ", custoFinal:6:2)
 
 Fimalgoritmo`,
 },
@@ -2204,7 +2204,7 @@ Inicio
    comissaoVendas <- valorTotalVendas * 5 / 100
    salarioFinal <- salarioFixo + (numeroCarrosVendidos * valorPorCarro) + comissaoVendas
 
-   Escreval("O salário final do vendedor é: R$", salarioFinal:6:2)
+   Escreval("O salário final do vendedor é: R$ ", salarioFinal:6:2)
 
 Fimalgoritmo`,
 },
@@ -2375,7 +2375,7 @@ Inicio
       custoTotal <- quantidade * 1.00
    fimse
 
-   Escreval("O custo total da compra é: R$", custoTotal:4:2)
+   Escreval("O custo total da compra é: R$ ", custoTotal:4:2)
 
 Fimalgoritmo`,
 },
@@ -2493,9 +2493,9 @@ Inicio
    Escreval("")
 
    se (a > b) entao
-      Escreval("O maior valor é A =", a)
+      Escreval("O maior valor é A = ", a)
    senao
-      Escreval("O maior valor é B =", b)
+      Escreval("O maior valor é B = ", b)
    fimse
 
 Fimalgoritmo`,
@@ -2529,9 +2529,9 @@ Inicio
    Escreval("")
 
    se (a > b) entao
-      Escreval("A ordem crescente dos valores é:",b," |",a)
+      Escreval("A ordem crescente dos valores é: ", b, " | ", a)
    senao
-      Escreval("A ordem crescente dos valores é:",a," |",b)
+      Escreval("A ordem crescente dos valores é: ", a, " | ", b)
    fimse
 
 Fimalgoritmo`,
@@ -2573,7 +2573,7 @@ Inicio
       duracao <- (24 - horaInicio) + horaFim
    fimse
 
-   Escreval("A duração da Partida de Xadrez foi de:", duracao, " horas")
+   Escreval("A duração da Partida de Xadrez foi de: ", duracao, " horas")
 
 Fimalgoritmo`,
 },
@@ -2615,7 +2615,7 @@ Inicio
       salarioTotal <- horasTrabalhadas * salarioHora
    fimse
 
-   Escreval("O salário total do funcionário é: R$", salarioTotal:6:2)
+   Escreval("O salário total do funcionário é: R$ ", salarioTotal:6:2)
 
 Fimalgoritmo`,
 },
@@ -2724,7 +2724,7 @@ Inicio
 
    salarioTotal <- salarioFixo + comissao
 
-   Escreval("O salário total do vendedor é: R$", salarioTotal:6:2)
+   Escreval("O salário total do vendedor é: R$ ", salarioTotal:6:2)
 
 Fimalgoritmo`,
 },
@@ -2774,7 +2774,7 @@ Inicio
       Escreval("Saldo Negativo")
    fimse
 
-   Escreval("O saldo atual é: R$", saldoAtual:6:2)
+   Escreval("O saldo atual é: R$ ", saldoAtual:6:2)
 
 Fimalgoritmo`,
 },
@@ -2890,15 +2890,15 @@ Inicio
 
    se (a > b) entao
       se (a > c) entao
-         Escreval("O maior valor é A =", a)
+         Escreval("O maior valor é A = ", a)
       senao
-         Escreval("O maior valor é C =", c)
+         Escreval("O maior valor é C = ", c)
       fimse
    senao
       se (b > c) entao
-         Escreval("O maior valor é B =", b)
+         Escreval("O maior valor é B = ", b)
       senao
-         Escreval("O maior valor é C =", c)
+         Escreval("O maior valor é C = ", c)
       fimse
    fimse
 
@@ -2938,14 +2938,14 @@ Inicio
 
    se (a < b) e (a < c) entao
       soma <- b + c
-      Escreval("A soma dos dois maiores valores (",b," +", c," ) é: ", soma)
+      Escreval("A soma dos dois maiores valores (", b, " + ", c, ") é: ", soma)
    senao
       se (b < a) e (b < c) entao
          soma <- a + c
-         Escreval("A soma dos dois maiores valores (",a," +",c," ) é: ", soma)
+         Escreval("A soma dos dois maiores valores (", a, " + ", c, ") é: ", soma)
       senao
          soma <- a + b
-         Escreval("A soma dos dois maiores valores (",a," +",b," ) é: ", soma)
+         Escreval("A soma dos dois maiores valores (", a, " + ", b, ") é: ", soma)
       fimSe
    fimSe
 
@@ -3001,7 +3001,7 @@ Inicio
       c <- auxiliar
    fimse
 
-   Escreval("A ordem crescente dos valores é:",a," ->",b," ->",c)
+   Escreval("A ordem crescente dos valores é: ", a, " -> ", b, " -> ", c)
 
 Fimalgoritmo`,
 },
@@ -3086,7 +3086,7 @@ Inicio
    Escreval("")
 
    se (golsTime1 > golsTime2) entao
-      Escreval("O vencedor é:", nomeTime1, "!")
+      Escreval("O vencedor é: ", nomeTime1, "!")
    senao
       se (golsTime2 > golsTime1) entao
          Escreval("O vencedor é: ", nomeTime2, "!")
@@ -3240,7 +3240,7 @@ Inicio
 
    valorPagar <- litros * precoLitro * (1 - desconto)
 
-   Escreval("O valor a ser pago pelo cliente é: R$", valorPagar:6:2)
+   Escreval("O valor a ser pago pelo cliente é: R$ ", valorPagar:6:2)
 
 Fimalgoritmo`,
 },
@@ -3304,8 +3304,8 @@ Inicio
    soma <- homemVelho + mulherNova
    produto <- homemNovo * mulherVelha
 
-   Escreval("A soma do homem mais velho com a mulher mais nova é:", soma)
-   Escreval("O produto do homem mais novo com a mulher mais velha é:", produto)
+   Escreval("A soma do homem mais velho com a mulher mais nova é: ", soma)
+   Escreval("O produto do homem mais novo com a mulher mais velha é: ", produto)
 
 Fimalgoritmo`,
 },
@@ -3359,7 +3359,7 @@ Inicio
       valorTotal <- valorTotal * 0.90
    fimse
 
-   Escreval("O valor a ser pago pelo cliente é: R$", valorTotal:6:2)
+   Escreval("O valor a ser pago pelo cliente é: R$ ", valorTotal:6:2)
 
 Fimalgoritmo`,
 },
