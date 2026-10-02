@@ -25,8 +25,17 @@
             </div><input type="hidden" name="id"><label>Página<input name="page" required></label><label>Capítulo /
                 assunto<input name="chapter" required></label><label>Exercício<input name="number"
                     required></label><label>Título curto<input name="title"></label><label>Enunciado<textarea
-                    name="prompt" rows="5"></textarea></label><label>Código VisualG<textarea name="code"
+                    name="prompt" rows="5"></textarea></label>
+            <label>Exibir código
+                <select name="codeLanguage" id="code-language">
+                    <option value="visualg">VisualG</option>
+                    <option value="javascript">JavaScript</option>
+                </select>
+            </label>
+            <label class="code-field" data-language="visualg">Código VisualG<textarea name="code"
                     rows="8"></textarea></label>
+            <label class="code-field" data-language="javascript">Código JavaScript<textarea name="javascriptCode"
+                    rows="8" spellcheck="false"></textarea></label>
             <div class="actions"><button class="secondary" type="button" id="remove">Excluir</button><button
                     class="primary" value="save">Salvar</button></div>
         </form>
@@ -38,7 +47,9 @@
                     <button class="primary" type="button" id="test-run">▶ Executar</button>
                 </div>
             </div>
-            <p class="test-hint">Roda o código VisualG acima direto aqui na página, sem precisar instalar o VisualG.
+            <p class="test-hint">Execute o código selecionado. JavaScript roda em um Web Worker isolado; use
+                <code>await readLine("pergunta")</code> para entrada e <code>write()</code>,
+                <code>writeln()</code> ou <code>console.log()</code> para saída.
             </p>
             <pre class="test-console" id="test-console"></pre>
             <div class="test-input-row" id="test-input-row" hidden>
@@ -50,7 +61,9 @@
     <script src="../data/exercises.js"></script>
     <script src="../data/exercise-details.js"></script>
     <script src="../data/visualg-matches.js"></script>
+    <script src="../data/javascript-matches.js"></script>
     <script src="../js/visualg-interpreter.js"></script>
+    <script src="../js/javascript-runner.js"></script>
     <script src="../js/exercises.js"></script>
 </body>
 

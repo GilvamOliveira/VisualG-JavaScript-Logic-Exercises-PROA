@@ -288,7 +288,7 @@ Inicio
    Leia(b)
    Escreval("")
    
-    Escreva("Informe o valor de C: ")
+   Escreva("Informe o valor de C: ")
    Leia(c)
    Escreval("")
 
@@ -296,7 +296,7 @@ Inicio
    Leia(d)
    Escreval("")
    
-   // Variavéis de soma
+   // Variáveis para as somas
    
    somAB <- a + b
    somAC <- a + c
@@ -305,7 +305,7 @@ Inicio
    somBD <- b + d
    somCD <- c + d
    
-   // Variavéis de multiplicação
+   // Variáveis para as multiplicações
    
    multAB <- a * b
    multAC <- a * c

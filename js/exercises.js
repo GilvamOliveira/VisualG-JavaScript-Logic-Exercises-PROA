@@ -25,6 +25,7 @@
           title: "",
           prompt: "",
           code: "",
+          javascriptCode: "",
           ...(window.VISUALG_MATCHES[id] || {}),
         };
       }),
@@ -49,14 +50,16 @@
       ...(window.EXERCISE_DETAILS[x.id] || {}),
       ...(window.VISUALG_MATCHES[x.id] || {}),
     };
-    return Object.keys(match).length
-      ? {
-          ...x,
-          title: x.title || match.title,
-          prompt: x.prompt || match.prompt,
-          code: x.code || match.code || "",
-        }
-      : x;
+    const javascriptMatch = window.JAVASCRIPT_MATCHES[x.id];
+    return {
+      ...x,
+      title: x.title || match.title || "",
+      prompt: x.prompt || match.prompt || "",
+      code: x.code || match.code || "",
+      javascriptCode:
+        x.javascriptCode || (javascriptMatch && javascriptMatch.code) || "",
+      codeLanguage: x.codeLanguage || "visualg",
+    };
   });
   const save = () =>
     localStorage.setItem(storageKey, JSON.stringify(exercises));
@@ -87,7 +90,7 @@
     document.querySelector("#groups").innerHTML = groups
       .map(
         (g) =>
-          `<section class="group"><div class="group-title"><span>Página ${esc(g.page)}</span><h2>${esc(g.chapter)}</h2></div><div class="cards">${g.items.map((x) => `<button class="exercise-card" data-id="${esc(x.id)}"><b>${esc(x.number)}</b><span>${esc(x.title || "Exercício " + x.number)}</span><small>${x.code ? "Código VisualG preenchido" : "Abrir para adicionar código"}</small></button>`).join("")}</div></section>`,
+          `<section class="group"><div class="group-title"><span>Página ${esc(g.page)}</span><h2>${esc(g.chapter)}</h2></div><div class="cards">${g.items.map((x) => `<button class="exercise-card" data-id="${esc(x.id)}"><b>${esc(x.number)}</b><span>${esc(x.title || "Exercício " + x.number)}</span><small>${[x.code && "VisualG", x.javascriptCode && "JavaScript"].filter(Boolean).join(" · ") || "Abrir para adicionar código"}</small></button>`).join("")}</div></section>`,
       )
       .join("");
   };
@@ -103,6 +106,8 @@
         title: "",
         prompt: "",
         code: "",
+        javascriptCode: "",
+        codeLanguage: "visualg",
       },
     ).forEach(([k, v]) => {
       if (form.elements[k]) form.elements[k].value = v;
@@ -111,7 +116,11 @@
       ? `Exercício ${x.number}`
       : "Novo exercício";
     document.querySelector("#remove").hidden = !x;
-    originalCode = (x && x.code) || "";
+    originalCode = {
+      visualg: (x && x.code) || "",
+      javascript: (x && x.javascriptCode) || "",
+    };
+    syncCodeFields();
     resetConsole();
     dialog.showModal();
   };
@@ -123,11 +132,16 @@
   const inputRow = document.querySelector("#test-input-row");
   const testInput = document.querySelector("#test-input");
   const testInputSend = document.querySelector("#test-input-send");
+  const codeLanguage = document.querySelector("#code-language");
+  let javascriptWorker = null;
+  let javascriptTimeout = null;
+  let javascriptOutputSize = 0;
   let running = false;
   let stopRequested = false;
   let pendingInput = null;
 
   function resetConsole() {
+    if (javascriptWorker) finishJavaScript();
     testConsole.textContent = "";
     inputRow.hidden = true;
     running = false;
@@ -156,7 +170,9 @@
     return new Promise((resolve) => {
       inputRow.hidden = false;
       testInput.value = "";
-      testInput.placeholder = `Valor para "${name}" — pressione Enter`;
+      testInput.placeholder = name
+        ? `Valor para "${name}" — pressione Enter`
+        : "Digite um valor e pressione Enter";
       testInput.focus();
       pendingInput = (value) => {
         inputRow.hidden = true;
@@ -182,17 +198,104 @@
   });
 
   testResetBtn.addEventListener("click", () => {
-    form.elements.code.value = originalCode;
+    form.elements.code.value = originalCode.visualg;
+    form.elements.javascriptCode.value = originalCode.javascript;
     resetConsole();
   });
 
+  function syncCodeFields() {
+    document.querySelectorAll(".code-field").forEach((field) => {
+      field.hidden = field.dataset.language !== codeLanguage.value;
+    });
+  }
+  codeLanguage.addEventListener("change", syncCodeFields);
+
+  function finishJavaScript(message, cls) {
+    if (!javascriptWorker) return;
+    clearTimeout(javascriptTimeout);
+    javascriptTimeout = null;
+    javascriptWorker.terminate();
+    javascriptWorker = null;
+    pendingInput = null;
+    inputRow.hidden = true;
+    if (message) printLine(message, cls);
+    running = false;
+    testRunBtn.textContent = "▶ Executar";
+    testResetBtn.disabled = false;
+  }
+
+  function runJavaScript() {
+    const source = form.elements.javascriptCode.value;
+    if (!source.trim()) {
+      printLine("Não há código JavaScript para executar.\n", "test-error");
+      return;
+    }
+    javascriptOutputSize = 0;
+    try {
+      javascriptWorker = window.JavaScriptRunner.create(source);
+    } catch (error) {
+      printLine(`Não foi possível iniciar o ambiente JavaScript: ${error.message}\n`, "test-error");
+      return;
+    }
+    running = true;
+    testRunBtn.textContent = "■ Parar";
+    testResetBtn.disabled = true;
+    javascriptWorker.onmessage = ({ data }) => {
+      if (!javascriptWorker) return;
+      if (data.type === "output") {
+        javascriptOutputSize += data.text.length;
+        if (javascriptOutputSize > 100000) {
+          finishJavaScript("\nExecução encerrada: limite de saída atingido.\n", "test-error");
+          return;
+        }
+        printLine(data.text);
+      } else if (data.type === "input") {
+        const question = String(data.question || "");
+        javascriptOutputSize += question.length;
+        if (javascriptOutputSize > 100000) {
+          finishJavaScript("\nExecução encerrada: limite de saída atingido.\n", "test-error");
+          return;
+        }
+        if (question) printLine(question);
+        inputRow.hidden = false;
+        testInput.value = "";
+        testInput.placeholder = question || "Digite um valor e pressione Enter";
+        testInput.focus();
+        pendingInput = (value) => {
+          inputRow.hidden = true;
+          printLine(value + "\n", "test-echo");
+          javascriptWorker.postMessage({ type: "input", value });
+        };
+      } else if (data.type === "done") {
+        finishJavaScript("\n[fim da execução]", "test-echo");
+      } else if (data.type === "error") {
+        finishJavaScript(`\n${data.message}\n`, "test-error");
+      }
+    };
+    javascriptWorker.onerror = (event) => {
+      event.preventDefault();
+      finishJavaScript(`\n${event.message || "Erro ao executar o JavaScript."}\n`, "test-error");
+    };
+    javascriptTimeout = setTimeout(() => {
+      finishJavaScript("\nExecução encerrada após 10 segundos.\n", "test-error");
+    }, 10000);
+  }
+
   testRunBtn.addEventListener("click", async () => {
     if (running) {
-      stopRequested = true;
+      if (javascriptWorker) {
+        finishJavaScript("\n[execução interrompida]", "test-echo");
+      } else {
+        stopRequested = true;
+      }
       return;
     }
     testConsole.textContent = "";
     inputRow.hidden = true;
+    if (codeLanguage.value === "javascript") {
+      runJavaScript();
+      return;
+    }
     running = true;
     testRunBtn.textContent = "■ Parar";
     testResetBtn.disabled = true;
@@ -226,6 +329,9 @@
     if (card) open(exercises.find((x) => x.id === card.dataset.id));
   });
   document.querySelector(".add").addEventListener("click", () => open());
+  dialog.addEventListener("close", () => {
+    if (javascriptWorker) finishJavaScript();
+  });
   form.addEventListener("submit", (e) => {
     if (e.submitter.value !== "save") return;
     e.preventDefault();

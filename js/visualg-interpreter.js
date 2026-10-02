@@ -1,9 +1,7 @@
 /*
- * Interpretador simplificado de VisualG (Portugol), feito para o Meteoro de Lógica.
- * Suporta: Algoritmo/Var/Inicio/Fimalgoritmo, tipos inteiro/real/caractere/cadeia/logico,
- * Leia, Escreva, Escreval, atribuição (<-), se/entao/senao/fimse, enquanto/faca/fimenquanto,
- * para/de/ate/passo/faca/fimpara, repita/ate, operadores + - * / div mod ^, e/ou/nao,
- * comparações = <> > < >= <=, constante pi e funções abs/raizq/quad/trunc/int.
+ * Interpretador de VisualG para os exercícios do projeto.
+ * Suporta declarações, entrada e saída, atribuição, seleções, laços,
+ * operações aritméticas e lógicas, comparações e funções matemáticas básicas.
  */
 (function (global) {
   "use strict";
