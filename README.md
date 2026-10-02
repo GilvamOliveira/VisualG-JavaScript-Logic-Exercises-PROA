@@ -2,7 +2,7 @@
 
 Aplicação web para consultar, organizar e executar exercícios de lógica de programação das apostilas Manzano e Faccat. Os exercícios podem ser estudados em VisualG ou JavaScript, com exemplos, enunciados e acompanhamento local.
 
-[Acessar a aplicação](https://gilvamoliveira.github.io/VisualG-logic-exercises/)
+[Acessar a aplicação](https://gilvamoliveira.github.io/VisualG-JavaScript-logic-exercises/)
 
 ## Recursos
 
