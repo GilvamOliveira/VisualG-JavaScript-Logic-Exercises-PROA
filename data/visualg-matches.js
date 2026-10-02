@@ -953,7 +953,7 @@ Inicio
    Escreval(numeroA)
    Escreval(numeroB)
 
-   enquanto (contadora <= 12) faca
+   enquanto (contadora <= 13) faca
       resultado <- numeroA + numeroB
 
       Escreval(resultado)
