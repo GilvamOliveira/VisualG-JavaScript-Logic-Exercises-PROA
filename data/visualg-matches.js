@@ -1402,7 +1402,7 @@ Inicio
 
    Escreval("A somatória dos números positivos lidos é:", soma)
    Escreval("A quantidade de números lidos foi:", quantidade)
-   Escreval("A média aritmética dos números lidos é:", media)
+   Escreval("A média aritmética dos números lidos é:", media:6:2)
 
 Fimalgoritmo`,
   },
