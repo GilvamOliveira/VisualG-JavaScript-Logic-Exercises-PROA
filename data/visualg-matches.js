@@ -1438,7 +1438,7 @@ Inicio
             multiplicador <- multiplicador + 1
          ate (multiplicador > contadora)
 
-         Escreval("O fatorial de", contadora," é:", fatorial)
+         Escreval("O fatorial de ", contadora," é: ", fatorial)
       fimse
 
       contadora <- contadora + 1
