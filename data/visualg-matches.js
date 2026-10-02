@@ -1357,7 +1357,7 @@ Inicio
       contadora <- contadora + 1
    ate (contadora > 15)
 
-   Escreval("A soma dos fatoriais dos valores lidos é:", somaFatoriais)
+   Escreval("A soma dos fatoriais dos valores lidos é: ", somaFatoriais)
 
 Fimalgoritmo`,
   },
