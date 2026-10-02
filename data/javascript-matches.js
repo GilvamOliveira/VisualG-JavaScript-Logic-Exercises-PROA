@@ -499,7 +499,6 @@ if (isNaN(numero) || numero < 0) {
   },
   "manzano-50-A": {
     code: `writeln("-- Quadrados de 15 a 200 --");
-writeln("-- Obs: Visualização no console --");
 
 let numero = 15;
 
@@ -529,7 +528,6 @@ writeln(\`O resultado da soma dos pares de 1 a 500 é: \${soma}\`);
   },
   "manzano-50-C": {
     code: `writeln("-- Divisíveis por 4 Menores que 200 --");
-writeln("-- Obs: Visualização no console --");
 
 let contadora = 1;
 
@@ -611,7 +609,6 @@ writeln(
   },
   "manzano-50-G": {
     code: `writeln("-- Fatorial dos Números Ímpares de 1 a 10 --");
-writeln("-- Obs: Visualização no console --");
 
 let contadora = 1;
 
@@ -710,7 +707,6 @@ writeln(\`\${dividendo} dividido por \${divisor} é igual a: \${resultado}\`);
   },
   "manzano-66-A": {
     code: `writeln("-- Quadrados de 15 a 200 --");
-writeln("-- Obs: Visualização no console --");
 
 for (let numero = 15; numero <= 200; numero++) {
     let quadrado = Math.pow(numero,2)
