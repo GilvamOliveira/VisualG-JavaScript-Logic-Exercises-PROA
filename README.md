@@ -1,7 +1,5 @@
 # Meteoro de Lógica
 
-[![Testes](https://github.com/GilvamOliveira/VisualG-JavaScript-Logic-Exercises-PROA/actions/workflows/ci.yml/badge.svg)](https://github.com/GilvamOliveira/VisualG-JavaScript-Logic-Exercises-PROA/actions/workflows/ci.yml)
-
 Aplicação web para consultar, organizar e executar exercícios de lógica de programação das apostilas Manzano e Faccat. Os exercícios podem ser estudados em VisualG ou JavaScript, com exemplos, enunciados e acompanhamento local.
 
 [Acessar a aplicação](https://gilvamoliveira.github.io/VisualG-JavaScript-Logic-Exercises-PROA/)
