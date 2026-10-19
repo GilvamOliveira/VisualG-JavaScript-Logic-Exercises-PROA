@@ -7,31 +7,41 @@ const links = {
 };
 const openLink = (id) => {
   const href = links[id];
+  if (!href) return;
   window.setTimeout(() => {
     if (id === "one" || id === "two" || id === "five")
-      window.open(href, "_blank", "noopener");
+      window.open(href, "_blank", "noopener,noreferrer");
     else window.location.href = href;
   }, 180);
 };
-Object.keys(links).forEach((id) =>
-  document
-    .querySelector(`#${id}`)
-    .addEventListener("click", () => openLink(id)),
-);
+const byId = (id) => document.getElementById(id);
+Object.keys(links).forEach((id) => {
+  const button = byId(id);
+  if (button) button.addEventListener("click", () => openLink(id));
+});
+const shortcutFor = (key) => {
+  const pressed = key.toLowerCase();
+  if (pressed === "m") return "three";
+  if (pressed === "f") return "four";
+  return null;
+};
 window.addEventListener("keydown", (event) => {
-  const id =
-    event.key.toLowerCase() === "m"
-      ? "three"
-      : event.key.toLowerCase() === "f"
-        ? "four"
-        : null;
+  if (event.ctrlKey || event.metaKey || event.altKey) return;
+  if (
+    event.target &&
+    typeof event.target.closest === "function" &&
+    event.target.closest("input, textarea, select")
+  )
+    return;
+  const id = shortcutFor(event.key);
   if (!id || event.repeat) return;
-  document.querySelector(`#${id}`).dataset.pressed = "true";
+  const button = byId(id);
+  if (!button) return;
+  button.dataset.pressed = "true";
   openLink(id);
 });
 window.addEventListener("keyup", (event) => {
-  if (event.key.toLowerCase() === "m")
-    document.querySelector("#three").dataset.pressed = "false";
-  if (event.key.toLowerCase() === "f")
-    document.querySelector("#four").dataset.pressed = "false";
+  const id = shortcutFor(event.key);
+  const button = id ? byId(id) : null;
+  if (button) button.dataset.pressed = "false";
 });
