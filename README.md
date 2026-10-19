@@ -1,6 +1,6 @@
 # Meteoro de Lógica
 
-Aplicação web para consultar, organizar e executar exercícios de lógica de programação das apostilas Manzano e Faccat. Os exercícios podem ser estudados em VisualG ou JavaScript, com exemplos, enunciados e acompanhamento local.
+Aplicação web para consultar, estudar e executar exercícios de lógica de programação das apostilas Manzano e Faccat, com soluções em VisualG e JavaScript no navegador, catálogo organizado, editor interativo e testes automatizados.
 
 [Acessar a aplicação](https://gilvamoliveira.github.io/VisualG-JavaScript-Logic-Exercises-PROA/)
 

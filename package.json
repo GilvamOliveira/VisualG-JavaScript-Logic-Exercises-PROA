@@ -2,7 +2,7 @@
   "name": "meteoro-de-logica",
   "version": "1.0.0",
   "private": true,
-  "description": "Exercícios de lógica de programação das apostilas Manzano e Faccat com soluções em VisualG e JavaScript.",
+  "description": "Aplicação web para consultar, estudar e executar exercícios de lógica de programação das apostilas Manzano e Faccat, com soluções em VisualG e JavaScript no navegador, catálogo organizado, editor interativo e testes automatizados.",
   "scripts": {
     "test": "node --test tests/visualg-interpreter.test.js tests/data.test.js tests/javascript-runner.test.js tests/pages.test.js",
     "start": "python -m http.server 8000"
