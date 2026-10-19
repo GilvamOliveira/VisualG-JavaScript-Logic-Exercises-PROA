@@ -4,6 +4,10 @@ Aplicação web para consultar, organizar e executar exercícios de lógica de p
 
 [Acessar a aplicação](https://gilvamoliveira.github.io/VisualG-JavaScript-Logic-Exercises-PROA/)
 
+## Demonstração
+
+![Catálogo de exercícios Manzano no Meteoro de Lógica](./img/demo.png)
+
 ## Recursos
 
 - Catálogo organizado por apostila, página e exercício.
