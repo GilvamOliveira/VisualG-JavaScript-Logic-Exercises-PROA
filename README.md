@@ -6,7 +6,7 @@ Aplicação web para consultar, organizar e executar exercícios de lógica de p
 
 ## Demonstração
 
-![Catálogo de exercícios Manzano no Meteoro de Lógica](./img/demo.png)
+![Navegação pelo catálogo Manzano e execução de um exercício em JavaScript no Meteoro de Lógica](./img/demo.gif)
 
 ## Recursos
 
