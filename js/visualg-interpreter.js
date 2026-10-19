@@ -42,6 +42,7 @@
       }
       if (c === '"' || c === "'") {
         const quote = c;
+        const startLine = line;
         let j = i + 1, str = "";
         while (j < n && source[j] !== quote) {
           if (source[j] === "\\" && (source[j + 1] === quote || source[j + 1] === "\\")) {
@@ -53,7 +54,7 @@
           str += source[j];
           j++;
         }
-        tokens.push({ type: "string", value: str, line });
+        tokens.push({ type: "string", value: str, line: startLine });
         i = j + 1;
         continue;
       }
@@ -138,8 +139,8 @@
     parseDecls() {
       const decls = [];
       while (this.at("ident")) {
-        const names = [this.next().value];
-        while (this.atOp(",")) { this.next(); names.push(this.expectIdent().value); }
+        const names = [this.next().value.toLowerCase()];
+        while (this.atOp(",")) { this.next(); names.push(this.expectIdent().value.toLowerCase()); }
         this.expectOp(":");
         let varType = "vetor";
         if (this.atKw("vetor")) {
@@ -184,8 +185,8 @@
     parseLeia() {
       const line = this.next().line;
       this.expectOp("(");
-      const names = [this.expectIdent().value];
-      while (this.atOp(",")) { this.next(); names.push(this.expectIdent().value); }
+      const names = [this.expectIdent().value.toLowerCase()];
+      while (this.atOp(",")) { this.next(); names.push(this.expectIdent().value.toLowerCase()); }
       this.expectOp(")");
       return { type: "Leia", names, line };
     }
@@ -215,11 +216,12 @@
 
     parseAtribuicao() {
       const name = this.next();
-      let index = null;
-      if (this.atOp("[")) { /* vetor: não suportado totalmente, mas evita travar */ }
+      if (this.atOp("[")) {
+        this.err("vetores ainda não são suportados por este interpretador");
+      }
       this.expectOp("<-");
       const expr = this.parseExpr();
-      return { type: "Atribuicao", name: name.value, expr, line: name.line };
+      return { type: "Atribuicao", name: name.value.toLowerCase(), expr, line: name.line };
     }
 
     parseSe() {
@@ -244,7 +246,7 @@
 
     parsePara() {
       const line = this.next().line;
-      const varName = this.expectIdent().value;
+      const varName = this.expectIdent().value.toLowerCase();
       this.expectKw("de");
       const from = this.parseExpr();
       this.expectKw("ate");
@@ -329,7 +331,7 @@
           this.expectOp(")");
           return { type: "Call", name: t.value, args, line: t.line };
         }
-        return { type: "Var", name: t.value, line: t.line };
+        return { type: "Var", name: t.value.toLowerCase(), line: t.line };
       }
       this.err("esperado um valor ou variável");
     }
@@ -363,7 +365,13 @@
     }
     async run(ast) {
       for (const d of ast.decls) for (const nm of d.names) this.vars[nm] = d.varType === "caractere" || d.varType === "cadeia" || d.varType === "caracter" ? "" : 0;
-      await this.execBlock(ast.body);
+      try {
+        await this.execBlock(ast.body);
+      } catch (error) {
+        if (error && error.__break)
+          throw new VisualGError("interrompa usado fora de um laço", error.line);
+        throw error;
+      }
     }
     async execBlock(stmts) {
       for (const s of stmts) await this.exec(s);
@@ -393,7 +401,11 @@
           return;
         }
         case "Enquanto": {
-          while (truthy(this.evalExpr(s.cond))) { await this.tick(s.line); await this.execBlock(s.body); }
+          try {
+            while (truthy(this.evalExpr(s.cond))) { await this.tick(s.line); await this.execBlock(s.body); }
+          } catch (error) {
+            if (!error || !error.__break) throw error;
+          }
           return;
         }
         case "Para": {
@@ -401,18 +413,26 @@
           let i = this.evalExpr(s.from);
           const to = this.evalExpr(s.to);
           this.vars[s.varName] = i;
-          if (step >= 0) {
-            for (; this.vars[s.varName] <= to; this.vars[s.varName] += step) { await this.tick(s.line); await this.execBlock(s.body); }
-          } else {
-            for (; this.vars[s.varName] >= to; this.vars[s.varName] += step) { await this.tick(s.line); await this.execBlock(s.body); }
+          try {
+            if (step >= 0) {
+              for (; this.vars[s.varName] <= to; this.vars[s.varName] += step) { await this.tick(s.line); await this.execBlock(s.body); }
+            } else {
+              for (; this.vars[s.varName] >= to; this.vars[s.varName] += step) { await this.tick(s.line); await this.execBlock(s.body); }
+            }
+          } catch (error) {
+            if (!error || !error.__break) throw error;
           }
           return;
         }
         case "Repita": {
-          do { await this.tick(s.line); await this.execBlock(s.body); } while (!truthy(this.evalExpr(s.cond)));
+          try {
+            do { await this.tick(s.line); await this.execBlock(s.body); } while (!truthy(this.evalExpr(s.cond)));
+          } catch (error) {
+            if (!error || !error.__break) throw error;
+          }
           return;
         }
-        case "Interrompa": throw { __break: true };
+        case "Interrompa": throw { __break: true, line: s.line };
         default: throw new VisualGError(`comando não suportado: ${s.type}`, s.line);
       }
     }
@@ -427,8 +447,8 @@
       } else {
         text = toDisplay(v);
       }
-      while (text.length < width) text = " " + text;
-      return text;
+      const padding = " ".repeat(Math.max(0, width - text.length));
+      return typeof v === "string" ? text + padding : padding + text;
     }
     evalExpr(e) {
       switch (e.type) {
@@ -476,9 +496,15 @@
             case "+": return l + r;
             case "-": return l - r;
             case "*": return l * r;
-            case "/": return l / r;
-            case "div": return Math.trunc(l / r);
-            case "mod": return l % r;
+            case "/":
+              if (r === 0) throw new VisualGError("divisão por zero", e.line);
+              return l / r;
+            case "div":
+              if (r === 0) throw new VisualGError("divisão por zero", e.line);
+              return Math.trunc(l / r);
+            case "mod":
+              if (r === 0) throw new VisualGError("divisão por zero", e.line);
+              return l % r;
             case "^": return Math.pow(l, r);
           }
           break;
