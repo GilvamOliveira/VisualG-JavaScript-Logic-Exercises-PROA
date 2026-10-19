@@ -3,6 +3,7 @@
     storageKey = `meteoro-exercises-${book}`,
     form = document.querySelector("#editor form"),
     dialog = document.querySelector("#editor");
+  if (!book || !window.EXERCISE_CATALOG?.[book] || !form || !dialog) return;
   const letters = (a, b) =>
     Array.from({ length: b.charCodeAt(0) - a.charCodeAt(0) + 1 }, (_, i) =>
       String.fromCharCode(a.charCodeAt(0) + i),
@@ -31,10 +32,30 @@
       }),
     );
   const baseline = initial();
-  let exercises =
-    JSON.parse(localStorage.getItem(storageKey) || "null") || baseline;
+  const readStorage = () => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) return { items: parsed, deleted: [] };
+      if (parsed && Array.isArray(parsed.items))
+        return {
+          items: parsed.items,
+          deleted: Array.isArray(parsed.deleted) ? parsed.deleted : [],
+        };
+    } catch (error) {
+      console.warn("Não foi possível ler os dados salvos no navegador.", error);
+    }
+    return null;
+  };
+  const stored = readStorage();
+  const deletedIds = new Set(stored ? stored.deleted : []);
+  let exercises = (stored ? stored.items : baseline).slice();
   baseline.forEach((item) => {
-    if (!exercises.some((existing) => existing.id === item.id))
+    if (
+      !deletedIds.has(item.id) &&
+      !exercises.some((existing) => existing.id === item.id)
+    )
       exercises.push(item);
   });
   if (book === "manzano") {
@@ -61,8 +82,20 @@
       codeLanguage: x.codeLanguage || "visualg",
     };
   });
-  const save = () =>
-    localStorage.setItem(storageKey, JSON.stringify(exercises));
+  const save = () => {
+    try {
+      localStorage.setItem(
+        storageKey,
+        JSON.stringify({
+          version: 2,
+          items: exercises,
+          deleted: [...deletedIds],
+        }),
+      );
+    } catch (error) {
+      console.warn("Não foi possível salvar os dados no navegador.", error);
+    }
+  };
   const esc = (s) =>
     String(s).replace(
       /[&<>'"]/g,
@@ -112,6 +145,8 @@
     ).forEach(([k, v]) => {
       if (form.elements[k]) form.elements[k].value = v;
     });
+    form.elements.codeLanguage.value =
+      x && x.codeLanguage === "javascript" ? "javascript" : "visualg";
     document.querySelector("#editor-title").textContent = x
       ? `Exercício ${x.number}`
       : "Novo exercício";
@@ -139,9 +174,20 @@
   let running = false;
   let stopRequested = false;
   let pendingInput = null;
+  let runToken = 0;
+
+  function cancelInput(message) {
+    if (!pendingInput) return;
+    const { reject } = pendingInput;
+    pendingInput = null;
+    inputRow.hidden = true;
+    if (reject) reject(new Error(message));
+  }
 
   function resetConsole() {
     if (javascriptWorker) finishJavaScript();
+    runToken += 1;
+    cancelInput("Execução interrompida.");
     testConsole.textContent = "";
     inputRow.hidden = true;
     running = false;
@@ -167,17 +213,20 @@
   }
 
   function askInput(name) {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       inputRow.hidden = false;
       testInput.value = "";
       testInput.placeholder = name
         ? `Valor para "${name}" — pressione Enter`
         : "Digite um valor e pressione Enter";
       testInput.focus();
-      pendingInput = (value) => {
-        inputRow.hidden = true;
-        printLine(value + "\n", "test-echo");
-        resolve(value);
+      pendingInput = {
+        resolve: (value) => {
+          inputRow.hidden = true;
+          printLine(value + "\n", "test-echo");
+          resolve(value);
+        },
+        reject,
       };
     });
   }
@@ -185,9 +234,9 @@
   const submitInput = () => {
     if (!pendingInput) return;
     const value = testInput.value;
-    const send = pendingInput;
+    const { resolve } = pendingInput;
     pendingInput = null;
-    send(value);
+    resolve(value);
   };
   testInputSend.addEventListener("click", submitInput);
   testInput.addEventListener("keydown", (e) => {
@@ -198,6 +247,8 @@
   });
 
   testResetBtn.addEventListener("click", () => {
+    if (javascriptWorker) finishJavaScript();
+    cancelInput("Execução interrompida.");
     form.elements.code.value = originalCode.visualg;
     form.elements.javascriptCode.value = originalCode.javascript;
     resetConsole();
@@ -261,10 +312,14 @@
         testInput.value = "";
         testInput.placeholder = question || "Digite um valor e pressione Enter";
         testInput.focus();
-        pendingInput = (value) => {
-          inputRow.hidden = true;
-          printLine(value + "\n", "test-echo");
-          javascriptWorker.postMessage({ type: "input", value });
+        pendingInput = {
+          resolve: (value) => {
+            inputRow.hidden = true;
+            printLine(value + "\n", "test-echo");
+            if (javascriptWorker)
+              javascriptWorker.postMessage({ type: "input", value });
+          },
+          reject: () => {},
         };
       } else if (data.type === "done") {
         finishJavaScript("\n[fim da execução]", "test-echo");
@@ -287,6 +342,7 @@
         finishJavaScript("\n[execução interrompida]", "test-echo");
       } else {
         stopRequested = true;
+        cancelInput("Execução interrompida pelo usuário.");
       }
       return;
     }
@@ -297,26 +353,29 @@
       return;
     }
     running = true;
+    const token = ++runToken;
     testRunBtn.textContent = "■ Parar";
     testResetBtn.disabled = true;
     const io = {
       write: (t) => printLine(t),
       writeln: (t) => printLine(t + "\n"),
       read: (name) => askInput(name),
-      shouldStop: () => stopRequested,
+      shouldStop: () => stopRequested || token !== runToken,
     };
     try {
       const ast = window.VisualG.compile(form.elements.code.value);
       const interp = new window.VisualG.Interpreter(io);
       await interp.run(ast);
-      printLine("\n[fim da execução]", "test-echo");
+      if (token === runToken) printLine("\n[fim da execução]", "test-echo");
     } catch (err) {
+      if (token !== runToken) return;
       inputRow.hidden = true;
       printLine(
         "\n" + (err && err.message ? err.message : "Erro ao executar o código.") + "\n",
         "test-error",
       );
     } finally {
+      if (token !== runToken) return;
       running = false;
       stopRequested = false;
       pendingInput = null;
@@ -329,11 +388,15 @@
     if (card) open(exercises.find((x) => x.id === card.dataset.id));
   });
   document.querySelector(".add").addEventListener("click", () => open());
+  const closeButton = document.querySelector("#editor-close");
+  if (closeButton) closeButton.addEventListener("click", () => dialog.close());
   dialog.addEventListener("close", () => {
     if (javascriptWorker) finishJavaScript();
+    runToken += 1;
+    cancelInput("Execução interrompida.");
   });
   form.addEventListener("submit", (e) => {
-    if (e.submitter.value !== "save") return;
+    if (e.submitter && e.submitter.value !== "save") return;
     e.preventDefault();
     const x = Object.fromEntries(new FormData(form));
     if (!x.id) x.id = `${book}-${Date.now()}`;
@@ -348,6 +411,7 @@
     const id = form.elements.id.value;
     if (id && confirm("Excluir este exercício?")) {
       exercises = exercises.filter((x) => x.id !== id);
+      if (baseline.some((item) => item.id === id)) deletedIds.add(id);
       save();
       render();
       dialog.close();

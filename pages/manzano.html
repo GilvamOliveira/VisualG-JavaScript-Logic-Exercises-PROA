@@ -4,6 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Exercícios da apostila Manzano com soluções em VisualG e JavaScript, editor e terminal para testar os códigos no navegador.">
+    <meta name="theme-color" content="#4969e8">
     <title>Manzano | Meteoro de Lógica</title>
     <link rel="icon" href="../img/favicon.webp">
     <link rel="stylesheet" href="../css/exercises.css">
@@ -19,9 +22,10 @@
         <section id="groups"></section><button class="add" type="button">+ Adicionar exercício</button>
     </main>
     <dialog id="editor">
-        <form method="dialog">
+        <form method="dialog" autocomplete="off">
             <div class="dialog-head">
-                <h2 id="editor-title">Editar exercício</h2><button class="icon" value="cancel">×</button>
+                <h2 id="editor-title">Editar exercício</h2><button class="icon" type="button" id="editor-close"
+                    aria-label="Fechar editor">×</button>
             </div><input type="hidden" name="id"><label>Página<input name="page" required></label><label>Capítulo /
                 assunto<input name="chapter" required></label><label>Exercício<input name="number"
                     required></label><label>Título curto<input name="title"></label><label>Enunciado<textarea
@@ -51,7 +55,8 @@
                 <code>await readLine("pergunta")</code> para entrada e <code>write()</code>,
                 <code>writeln()</code> ou <code>console.log()</code> para saída.
             </p>
-            <pre class="test-console" id="test-console"></pre>
+            <pre class="test-console" id="test-console" aria-live="polite"
+                aria-label="Saída da execução"></pre>
             <div class="test-input-row" id="test-input-row" hidden>
                 <input id="test-input" type="text" autocomplete="off" placeholder="Digite o valor pedido pelo Leia() e pressione Enter">
                 <button type="button" id="test-input-send">Enviar</button>
