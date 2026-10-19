@@ -1,0 +1,16 @@
+# Dependências e saídas de ferramentas
+node_modules/
+coverage/
+*.log
+
+# Ambiente local
+.env
+.env.*
+
+# Sistemas operacionais e editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.local
