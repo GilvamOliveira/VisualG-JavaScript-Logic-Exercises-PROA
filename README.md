@@ -1,5 +1,7 @@
 # Meteoro de Lógica
 
+[![Testes](https://github.com/GilvamOliveira/VisualG-JavaScript-Logic-Exercises-PROA/actions/workflows/ci.yml/badge.svg)](https://github.com/GilvamOliveira/VisualG-JavaScript-Logic-Exercises-PROA/actions/workflows/ci.yml)
+
 Aplicação web para consultar, organizar e executar exercícios de lógica de programação das apostilas Manzano e Faccat. Os exercícios podem ser estudados em VisualG ou JavaScript, com exemplos, enunciados e acompanhamento local.
 
 [Acessar a aplicação](https://gilvamoliveira.github.io/VisualG-JavaScript-Logic-Exercises-PROA/)
@@ -12,6 +14,7 @@ Aplicação web para consultar, organizar e executar exercícios de lógica de p
 - Cadastro, edição e remoção de exercícios.
 - Persistência das alterações no armazenamento local do navegador.
 - Acesso às apostilas em PDF.
+- Testes automatizados do interpretador, do catálogo e do executor JavaScript.
 
 ## Executar localmente
 
@@ -31,7 +34,7 @@ Selecione um cartão para abrir o editor. O menu **Exibir código** alterna entr
 
 Use **Executar** para testar a linguagem selecionada. O campo de entrada atende chamadas `Leia()` do VisualG e `await readLine("Pergunta")` do JavaScript. `write()`, `writeln()` e `console.log()` enviam a saída JavaScript ao terminal do exercício. O botão **Parar** interrompe a execução.
 
-O interpretador VisualG implementa os comandos e expressões usados nos exemplos do projeto. O JavaScript roda em um Web Worker temporário, separado da página, com limite de execução de 10 segundos e de 100.000 caracteres de saída.
+O interpretador VisualG implementa os comandos e expressões usados nos exemplos do projeto, incluindo `interrompa`, e não diferencia maiúsculas de minúsculas nos nomes de variáveis. O JavaScript roda em um Web Worker temporário, separado da página, com limite de execução de 10 segundos e de 100.000 caracteres de saída.
 
 ## Estrutura do projeto
 
@@ -39,6 +42,8 @@ O interpretador VisualG implementa os comandos e expressões usados nos exemplos
 | --- | --- |
 | `index.html` | Página inicial e navegação |
 | `pages/manzano.html`, `pages/faccat.html` | Catálogos e editores das apostilas |
+| `pages/pdf-*.html` | Visualizadores das apostilas em PDF |
+| `css/` | Estilos das páginas, do editor e do teclado inicial |
 | `data/exercises.js` | Grupos e intervalos de exercícios |
 | `data/exercise-details.js` | Títulos e enunciados complementares |
 | `data/visualg-matches.js` | Exemplos de código VisualG |
@@ -46,7 +51,19 @@ O interpretador VisualG implementa os comandos e expressões usados nos exemplos
 | `js/visualg-interpreter.js` | Interpretador VisualG |
 | `js/javascript-runner.js` | Execução JavaScript em Web Worker |
 | `js/exercises.js` | Interface, edição, persistência e terminal |
+| `js/main.js` | Navegação e atalhos da página inicial |
+| `tests/` | Testes automatizados com `node:test` |
 | `pdfs/` | Apostilas em PDF |
+
+## Testes
+
+Os testes exigem Node.js 20 ou superior e não instalam dependências:
+
+```sh
+npm test
+```
+
+Eles verificam o interpretador VisualG, a consistência do catálogo e dos exemplos, a sintaxe das soluções JavaScript e o executor de código (incluindo crases e interpolação dentro dos exercícios). O workflow em `.github/workflows/ci.yml` executa a mesma suíte a cada push e pull request.
 
 ## Adicionar exercícios e soluções
 
@@ -63,3 +80,5 @@ O catálogo inclui 84 exercícios com exemplos nas duas linguagens. Ao abrir um 
 ## Dados locais
 
 As alterações feitas pelo editor são armazenadas no navegador e permanecem após recarregar a página. Esses dados são específicos do navegador e do dispositivo. A lista padrão do projeto é definida pelos arquivos em `data/`.
+
+Exercícios padrão removidos também permanecem excluídos após recarregar a página. Para voltar à lista original, limpe os dados do site no navegador ou remova a chave `meteoro-exercises-manzano` ou `meteoro-exercises-faccat` do `localStorage`.
