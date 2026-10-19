@@ -89,10 +89,17 @@ window.EXERCISE_DETAILS = {};
   add(
     "faccat",
     "5",
-    [12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+    [12, 13],
     [
       "Fahrenheit para Celsius::Ler Fahrenheit e calcular Celsius.",
       "Média ponderada::Ler três notas e calcular média ponderada com pesos 2, 3 e 5.",
+    ],
+  );
+  add(
+    "faccat",
+    "5–6",
+    [14, 15, 16, 17, 18, 19, 20, 21],
+    [
       "Maior que 10::Ler valor e informar se é maior que 10.",
       "Positivo ou negativo::Ler valor e informar se é positivo ou negativo; zero é positivo.",
       "Compra de maçãs::Calcular compra: R$ 1,30 abaixo de 12, R$ 1,00 a partir de 12.",
