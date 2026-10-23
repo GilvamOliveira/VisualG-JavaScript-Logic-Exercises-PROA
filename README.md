@@ -2,6 +2,8 @@
 
 Aplicação web para consultar, estudar e executar exercícios de lógica de programação das apostilas Manzano e Faccat, com soluções em VisualG e JavaScript no navegador, catálogo organizado, editor interativo e testes automatizados.
 
+[![Testes](https://github.com/GilvamOliveira/VisualG-JavaScript-Logic-Exercises-PROA/actions/workflows/ci.yml/badge.svg)](https://github.com/GilvamOliveira/VisualG-JavaScript-Logic-Exercises-PROA/actions/workflows/ci.yml)
+
 [Acessar a aplicação](https://gilvamoliveira.github.io/VisualG-JavaScript-Logic-Exercises-PROA/)
 
 ## Demonstração
