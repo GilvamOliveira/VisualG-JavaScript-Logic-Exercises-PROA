@@ -84,3 +84,7 @@ O catálogo inclui 84 exercícios com exemplos nas duas linguagens. Ao abrir um 
 As alterações feitas pelo editor são armazenadas no navegador e permanecem após recarregar a página. Esses dados são específicos do navegador e do dispositivo. A lista padrão do projeto é definida pelos arquivos em `data/`.
 
 Exercícios padrão removidos também permanecem excluídos após recarregar a página. Para voltar à lista original, limpe os dados do site no navegador ou remova a chave `meteoro-exercises-manzano` ou `meteoro-exercises-faccat` do `localStorage`.
+
+---
+
+Autor: Gilvam Oliveira · [LinkedIn](https://www.linkedin.com/in/gilvam-oliveira/) · [GitHub](https://github.com/GilvamOliveira)
